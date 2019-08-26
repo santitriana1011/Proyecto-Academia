@@ -1,0 +1,39 @@
+﻿@model myFirstAzureWebApp.Models.HojaDeVida
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+    <h2>Eliminar</h2>
+
+<h3>¿Está seguro de eliminar este registro?</h3>
+<div>
+    <h4>Hoja de vida</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleado)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Empleado.Nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Especialidad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Especialidad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TiempoExperiencia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TiempoExperiencia)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="HojaDeVidaID" />
+        <input type="submit" value="Eliminar" class="btn btn-outline-danger" /> |
+        <a asp-action="Index" class="btn btn-outline-primary">Atrás</a>
+    </form>
+</div>

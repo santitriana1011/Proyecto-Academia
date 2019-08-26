@@ -1,0 +1,53 @@
+﻿@model IEnumerable<myFirstAzureWebApp.Models.Escuela>
+
+@{
+    ViewData["Title"] = "Escuelas";
+}
+
+<h2 class="mt-5">Escuelas</h2>
+
+<p>
+    <a asp-action="Create"><button class="btn btn-outline-primary mt-5">Nuevo</button></a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Direccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.EscuelaID" class="btn btn-outline-success">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.EscuelaID" class="btn btn-outline-warning">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.EscuelaID" class="btn btn-outline-danger">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

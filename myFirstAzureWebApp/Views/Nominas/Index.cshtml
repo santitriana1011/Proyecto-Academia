@@ -1,0 +1,59 @@
+﻿@model IEnumerable<myFirstAzureWebApp.Models.Nomina>
+
+@{
+    ViewData["Title"] = "Nomina";
+}
+
+    <h2 class="mt-5">Nomina</h2>
+
+<p>
+    <a asp-action="Create"><button class="btn btn-outline-primary mt-5">Nuevo</button></a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Empleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaInicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaFin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Empleado.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaFin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.NominaID" class="btn btn-outline-success">Editar</a>
+                <a asp-action="Details" asp-route-id="@item.NominaID" class="btn btn-outline-warning">Detalles</a>|
+                <a asp-action="Delete" asp-route-id="@item.NominaID" class="btn btn-outline-danger">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

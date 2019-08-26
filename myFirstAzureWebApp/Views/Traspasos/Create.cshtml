@@ -1,0 +1,51 @@
+﻿@model myFirstAzureWebApp.Models.Traspaso
+
+@{
+    ViewData["Title"] = "Crear";
+}
+
+<h2>Crear</h2>
+
+<h4>Traspaso</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EstudianteID" class="control-label"></label>
+                <select asp-for="EstudianteID" class ="form-control" asp-items="ViewBag.EstudianteID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="EscuelaID" class="control-label"></label>
+                <select asp-for="EscuelaID" class ="form-control" asp-items="ViewBag.EscuelaID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaInicio" class="control-label"></label>
+                <input asp-for="FechaInicio" class="form-control" />
+                <span asp-validation-for="FechaInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaFin" class="control-label"></label>
+                <input asp-for="FechaFin" class="form-control" />
+                <span asp-validation-for="FechaFin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Novedades" class="control-label"></label>
+                <input asp-for="Novedades" class="form-control" />
+                <span asp-validation-for="Novedades" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-outline-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-outline-danger">Atrás</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

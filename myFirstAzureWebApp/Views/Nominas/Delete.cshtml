@@ -1,0 +1,51 @@
+﻿@model myFirstAzureWebApp.Models.Nomina
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+    <h2>Eliminar</h2>
+
+    <h3>¿Está seguro de eliminar este registro?</h3>
+<div>
+    <h4>Nomina</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleado)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Empleado.Nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Item)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Item.Nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaInicio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaInicio)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaFin)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaFin)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="NominaID" />
+        <input type="submit" value="Eliminar" class="btn btn-outline-danger" />
+        <a asp-action="Index" class="btn btn-outline-primary">Atrás</a>
+    </form>
+</div>
