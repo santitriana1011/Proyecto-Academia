@@ -21,9 +21,9 @@
                         <h5 class="card-title"> @Html.DisplayFor(modelItem => item.Nombre)  @Html.DisplayFor(modelItem => item.Apellido)</h5>
                         <p class="card-text">@Html.DisplayNameFor(model => model.Cargo) : @Html.DisplayFor(modelItem => item.Cargo.Nombre) </p>
                         <p class="card-text"><small class="text-muted">@Html.DisplayNameFor(model => model.Documento) :  @Html.DisplayFor(modelItem => item.Documento)</small></p>
-                        <p class="card-text"><small class="text-muted">@Html.DisplayFor(modelItem => item.Telefono) : @Html.DisplayFor(modelItem => item.Telefono)</small></p>
+                        <p class="card-text"><small class="text-muted">@Html.DisplayNameFor(model => model.Telefono) : @Html.DisplayFor(modelItem => item.Telefono)</small></p>
                         <p class="card-text"><small class="text-muted">@Html.DisplayNameFor(model => model.Direccion) :  @Html.DisplayFor(modelItem => item.Direccion)</small></p>
-                        @*<p class="card-text"><small class="text-muted">  @Html.DisplayFor(modelItem => item.Rol)</small></p>*@
+                        
                         <p class="card-text"><small class="text-muted">@Html.DisplayNameFor(model => model.Estado) :  @Html.DisplayFor(modelItem => item.Estado)</small></p>
                     </div>
                 </div>
