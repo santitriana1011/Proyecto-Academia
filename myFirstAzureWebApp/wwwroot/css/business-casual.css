@@ -3,11 +3,17 @@
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-casual/blob/master/LICENSE)
  */
-
+/*Mis Estilos*/
+.letra{
+    color:white;
+    font-size:25px; 
+    margin-left:105px;
+}
+/*Final mis estilos*/
 body {
     font-family: 'Lora';
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(33, 33, 33))), url("../images/562943.jpg");
-    background: linear-gradient(rgba(33, 33, 33)), url("../img/bg.jpg");
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(33, 33, 33, 0.5))), url("../images/562943.jpg");
+    background: linear-gradient(rgba(33, 33, 33 )), url("../img/bg.jpg");
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -20,9 +26,11 @@ h4,
 h5,
 h6 {
   font-family: 'Raleway';
+  text-align: center;
 }
 
 p {
+   
   line-height: 1.75;
 }
 

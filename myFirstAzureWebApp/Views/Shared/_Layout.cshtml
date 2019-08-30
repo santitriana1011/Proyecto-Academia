@@ -42,6 +42,7 @@
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
+
                         <li class="nav-item px-lg-4">
                             <a class="nav-link text-uppercase text-expanded" asp-controller="Home" asp-action="Resultados">Resultados</a>
                         </li>
@@ -55,10 +56,16 @@
                             <a class="nav-link text-uppercase text-expanded" asp-controller="Traspasos" asp-action="Index">Traspasos</a>
                         </li>
                         <li class="nav-item px-lg-4">
-                            <a class="nav-link text-uppercase text-expanded" asp-controller="Mensualidades" asp-action="Index">Mensualidades</a>
+                            <a class="nav-link text-uppercase text-expanded" asp-controller="Empleados" asp-action="Index">Empleados</a>
+                           
                         </li>
                         <li class="nav-item px-lg-4">
-                            <a class="nav-link text-uppercase text-expanded" asp-controller="Empleados" asp-action="Index">Empleados</a>
+                            @*<a class="nav-link text-uppercase text-expanded" asp-controller="Mensualidades" asp-action="Index">Mensualidades</a>*@
+                            <a class="btn btn-outline-dark btn-lg" asp-area="Identity" asp-page="/Account/Login">Iniciar</a>
+                        </li>
+                        <li class="nav-item px-lg-4">
+                            @*<a class="nav-link text-uppercase text-expanded" asp-controller="Empleados" asp-action="Index">Empleados</a>*@
+                            <a class="btn btn-outline-dark btn-lg" asp-page="/Account/Register" asp-area="Identity">Registrarse</a>
                         </li>
                     </ul>
                 </div>
