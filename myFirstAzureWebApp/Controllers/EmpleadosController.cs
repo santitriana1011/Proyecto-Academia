@@ -156,5 +156,9 @@ namespace myFirstAzureWebApp.Controllers
         {
             return _context.Empleado.Any(e => e.EmpleadoID == id);
         }
+        public IActionResult Horarios()
+        {
+            return View();
+        }
     }
 }
