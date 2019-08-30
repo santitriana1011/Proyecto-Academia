@@ -156,9 +156,10 @@ namespace myFirstAzureWebApp.Controllers
         {
             return _context.Empleado.Any(e => e.EmpleadoID == id);
         }
-        public IActionResult Horarios()
+        public async Task<IActionResult> Horarios()
         {
-            return View();
+            var applicationDbContext = _context.Empleado.Include(e => e.Cargo);
+            return View(await applicationDbContext.ToListAsync());
         }
     }
 }
