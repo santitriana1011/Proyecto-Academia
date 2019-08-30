@@ -6,92 +6,99 @@
 
 @*<h2 class="mt-5">Empleado</h2>
 
-<p>
-    <a asp-action="Create"><button class="btn btn-outline-primary mt-5">Nuevo</button></a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Cargo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Apellido)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Documento)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Telefono)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Direccion)
-            </th>
-            @*<th>
-                @Html.DisplayNameFor(model => model.Contrasenia)
-            </th>*@
-            @*<th>
-                @Html.DisplayNameFor(model => model.Rol)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Estado)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cargo.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Apellido)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Documento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telefono)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Direccion)
-            </td>''
-            @*<td>
-                @Html.DisplayFor(modelItem => item.Rol)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Estado)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.EmpleadoID" class="btn btn-outline-success">Editar</a> ||
-                <a asp-action="Details" asp-route-id="@item.EmpleadoID" class="btn btn-outline-warning">Detalles</a>||
-                <a asp-action="Delete" asp-route-id="@item.EmpleadoID" class="btn btn-outline-danger">Eliminar</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>*@
+    <p>
+        <a asp-action="Create"><button class="btn btn-outline-primary mt-5">Nuevo</button></a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cargo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Apellido)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Documento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Telefono)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Direccion)
+                </th>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.Contrasenia)
+                </th>*@
+@*<th>
+                    @Html.DisplayNameFor(model => model.Rol)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estado)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cargo.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Documento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefono)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Direccion)
+                </td>''
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Rol)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estado)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.EmpleadoID" class="btn btn-outline-success">Editar</a> ||
+                    <a asp-action="Details" asp-route-id="@item.EmpleadoID" class="btn btn-outline-warning">Detalles</a>||
+                    <a asp-action="Delete" asp-route-id="@item.EmpleadoID" class="btn btn-outline-danger">Eliminar</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>*@
 
-    <section>
-        <div class="card mb-3" style="max-width: 540px;"> 
+<section>
+    @foreach (var item in Model)
+    {
+        <div class="card mb-3" style="max-width: 540px;">
             <div class="row no-gutters">
-                <div class="col-md-4"> 
-                <img src="..." class="card-img" alt="..."> 
-               </div> 
-            <div class="col-md-8"> 
-                <div class="card-body"> 
-                    <h5 class="card-title"> Card title </h5> 
-                        <p class="card-text"> This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. </p> 
-                        <p class="card-text"><small class="text-muted"> Last updated 3 mins ago </small></p> 
+                <div class="col-md-4">
+                    <img src="~/images/Director.jpg" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"> @Html.DisplayFor(modelItem => item.Nombre)  @Html.DisplayFor(modelItem => item.Apellido)</h5>
+                        <p class="card-text"> @Html.DisplayFor(modelItem => item.Cargo.Nombre) </p>
+                        <p class="card-text"><small class="text-muted">  @Html.DisplayFor(modelItem => item.Documento)</small></p>
+                        <p class="card-text"><small class="text-muted">  @Html.DisplayFor(modelItem => item.Telefono)</small></p>
+                        <p class="card-text"><small class="text-muted">  @Html.DisplayFor(modelItem => item.Direccion)</small></p>
+                        <p class="card-text"><small class="text-muted">  @Html.DisplayFor(modelItem => item.Rol)</small></p>
+                        <p class="card-text"><small class="text-muted">  @Html.DisplayFor(modelItem => item.Estado)</small></p>
+                    </div>
                 </div>
             </div>
-            </div> 
         </div>
-    </section>
+    }
+</section>
