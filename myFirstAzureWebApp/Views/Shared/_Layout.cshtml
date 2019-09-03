@@ -35,6 +35,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
+              
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item active px-lg-4">
                             <a class="nav-link text-uppercase text-expanded" asp-controller="Home" asp-action="Index">
@@ -43,22 +44,28 @@
                             </a>
                         </li>
 
+
+
                         <li class="nav-item px-lg-4">
                             <a class="nav-link text-uppercase text-expanded" asp-controller="Home" asp-action="Resultados">Resultados</a>
                         </li>
                         <li class="nav-item px-lg-4">
-                            <a class="nav-link text-uppercase text-expanded" asp-controller="Home" asp-action="Jugadores">Jugadores</a>
+                            <a class="nav-link text-uppercase text-expanded" asp-controller="Home" asp-action="Uniformes">Uniformes</a>
                         </li>
                         <li class="nav-item px-lg-4">
-                            <a class="nav-link text-uppercase text-expanded" asp-controller="Empleados" asp-action="Horarios">Horarios</a>
+                            <a class="nav-link text-uppercase text-expanded" asp-controller="Home" asp-action="Jugadores">Jugadores</a>
                         </li>
+                        @*<li class="nav-item px-lg-4">
+                            <a class="nav-link text-uppercase text-expanded" asp-controller="Empleados" asp-action="Horarios">Horarios</a>
+                        </li>*@
                         <li class="nav-item px-lg-4">
                             <a class="nav-link text-uppercase text-expanded" asp-controller="Traspasos" asp-action="Index">Traspasos</a>
                         </li>
-                        <li class="nav-item px-lg-4">
-                            <a class="nav-link text-uppercase text-expanded" asp-controller="Empleados" asp-action="Index">Empleados</a>
-                           
-                        </li>
+                        @*<li class="nav-item px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" asp-controller="Empleados" asp-action="Index">Empleados</a>
+
+
+        </li>*@
                         <li class="nav-item px-lg-4">
                             @*<a class="nav-link text-uppercase text-expanded" asp-controller="Mensualidades" asp-action="Index">Mensualidades</a>*@
                             <a class="btn btn-outline-dark btn-lg" asp-area="Identity" asp-page="/Account/Login">Iniciar</a>
@@ -67,6 +74,7 @@
                             @*<a class="nav-link text-uppercase text-expanded" asp-controller="Empleados" asp-action="Index">Empleados</a>*@
                             <a class="btn btn-outline-dark btn-lg" asp-page="/Account/Register" asp-area="Identity">Registrarse</a>
                         </li>
+
                     </ul>
                 </div>
             </div>
@@ -74,12 +82,14 @@
     </header>
     @RenderBody()
     <hr />
-    <footer class="footer text-faded text-center py-5">
+    <footer class="footer text-center py-5">
         <div class="container">
             <p class="m-0 small" style="color:white;">Copyright &copy; Academia Bellavista 2019 Todos los Derechos Reservados</p>
-            <p class="m-0 small" style="color:white;">Colaboracion con: Vive Digital Tunja</p>
-            <img height="40px" width="80px" src="~/images/ViveLab Boyacá logo oficial.png" />
             <p class="m-0 small" style="color:white;">Tambien en colaboracion con: Gobernacion de Boyaca</p>
+            <p class="m-0 small" style="color:white;">Colaboracion con: Vive Digital Tunja</p>
+
+            <img height="40px" width="80px" src="~/images/ViveLab Boyacá logo oficial.png" />
+
             <img height="40px" width="80px" src="~/images/LogoGobernacion.png" />
         </div>
     </footer>

@@ -1,0 +1,38 @@
+﻿@model myFirstAzureWebApp.Models.Horario
+
+@{
+    ViewData["Title"] = "Crear";
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/business-casual.css" />
+<h2 style="color:white;">Crear</h2>
+
+<h4 style="color:white;">Horario</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="HorarioID" class="control-label letra">Seleccione el Horario:</label>
+                <select asp-for="HorarioID" class="form-control" asp-items="ViewBag.HorarioID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaHora" class="control-label letra"></label>
+                <input asp-for="FechaHora" class="form-control" />
+                <span asp-validation-for="FechaHora" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="margin-left:34%;">
+                <input type="submit" value="Crear" class="btn btn-outline-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div style="margin-left:25%;">
+    <a asp-action="Index" class="btn btn-outline-danger">Atrás</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
