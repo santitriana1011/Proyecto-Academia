@@ -34,14 +34,18 @@
 </head>
 
 <body>
-   
+
+    <p>
+        <a asp-action="Create"><button class="btn btn-primary mt-5" style="width:25%; margin-left:35%;">Nuevo Estudiante</button></a>
+    </p>
+
     <section>
         <div class="container">
             <div class="row mb-5">
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4 col-sm-6">
                     @foreach (var item in Model)
                     {
-                        <div class="card text-center" style="max-width: 540px; display:inline-block; margin-right:12px; margin-left:24px; margin-top:9px;">
+                        <div class="card text-center" style="max-width: 440px; display:inline-block; margin-right:12px; margin-left:24px; margin-top:9px;">
                             <div class="card-block">
                                 <img src="~/images/mbappe.jpg" class="players img-fluid " />
                                 <div class="card-title">
@@ -53,6 +57,11 @@
                                     <p>@Html.DisplayFor(modelItem => item.Documento)</p>
                                     <p>@Html.DisplayFor(modelItem => item.FechaNacimiento)</p>
                                 </div>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.EstudianteID" class="btn btn-outline-success">Editar</a> ||
+                                    <a asp-action="Details" asp-route-id="@item.EstudianteID" class="btn btn-outline-warning">Detalles</a> ||
+                                    <a asp-action="Delete" asp-route-id="@item.EstudianteID" class="btn btn-outline-danger">Eliminar</a>
+                                </td>
                             </div>
                         </div>
                     }
@@ -60,7 +69,7 @@
             </div>
         </div>
     </section>
-   
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

@@ -39,14 +39,14 @@
                 <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-outline-success" />
+                <input type="submit" value="Guardar" class="btn btn-outline-success" asp-action="Leones" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index" class="btn btn-outline-primary">Atrás</a>
+    <a asp-action="Leones" class="btn btn-outline-primary">Atrás</a>
 </div>
 
 @section Scripts {

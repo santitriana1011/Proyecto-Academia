@@ -1,4 +1,4 @@
-﻿@model myFirstAzureWebApp.Models.Empleado
+﻿@model myFirstAzureWebApp.Models.Horario
 
 @{
     ViewData["Title"] = "Detalles";
@@ -9,8 +9,8 @@
 <div>
     <h4>Empleado</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
+    @*<dl class="dl-horizontal">*@
+        @*<dt>
             @Html.DisplayNameFor(model => model.Cargo)
         </dt>
         <dd>
@@ -64,9 +64,9 @@
         <dd>
             @Html.DisplayFor(model => model.Estado)
         </dd>
-    </dl>
+    </dl>*@
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.EmpleadoID" class="btn btn-outline-light">Editar</a> |
-    <a asp-action="Index" class="btn btn-outline-primary">Atrás</a>
+    @*<a asp-action="Edit" asp-route-id="@Model.EmpleadoID" class="btn btn-outline-light">Editar</a> |
+    <a asp-action="Index" class="btn btn-outline-primary">Atrás</a>*@
 </div>

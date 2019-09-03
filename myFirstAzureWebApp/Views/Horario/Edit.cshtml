@@ -1,4 +1,4 @@
-﻿@model myFirstAzureWebApp.Models.Empleado
+﻿@model myFirstAzureWebApp.Models.Horario
 
 @{
     ViewData["Title"] = "Editar";
@@ -7,7 +7,7 @@
 <h2>Editar</h2>
 
 <h4>Empleado</h4>
-<hr />
+@*<hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
@@ -69,8 +69,8 @@
 
 <div>
     <a asp-action="Index" class="btn btn-outline-danger">Atrás</a>
-</div>
+</div>*@
 
-@section Scripts {
+@*@section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+}*@
