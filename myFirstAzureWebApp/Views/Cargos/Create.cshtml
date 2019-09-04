@@ -3,36 +3,37 @@
 @{
     ViewData["Title"] = "Crear";
 }
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/business-casual.css" />
+<h2 style="color:white;">Creando un nuevo cargo</h2>
 
-<h2>Crear</h2>
-
-<h4>Cargo</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Nombre" class="control-label"></label>
+                <label asp-for="Nombre" class="control-label letra"></label>
                 <input asp-for="Nombre" class="form-control" />
                 <span asp-validation-for="Nombre" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <div class="checkbox">
-                    <label>
+                    <label class="letra">
                         <input asp-for="Estado" /> @Html.DisplayNameFor(model => model.Estado)
                     </label>
                 </div>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Crear" class="btn btn-outline-primary" />
+            <div class="form-group" style="margin-left:34%;">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-danger">Atrás</a>
             </div>
         </form>
     </div>
-</div>
+@*</div>
 
-<div>
-    <a asp-action="Index" class="btn btn-outline-danger">Atrás</a>
+<div>*@
+    
 </div>
 
 @section Scripts {

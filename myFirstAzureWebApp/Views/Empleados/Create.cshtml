@@ -5,9 +5,8 @@
 }
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
 <link rel="stylesheet" href="~/css/business-casual.css" />
-<h2 style="color:white;">Crear</h2>
+<h2 style="color:white;">Creando Nuevo Empleado</h2>
 
-<h4 style="color:white;">Empleado</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -18,37 +17,37 @@
                 <select asp-for="CargoID" class="form-control" asp-items="ViewBag.CargoID"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Nombre" class="control-label letra"></label>
+                <label asp-for="Nombre" class="control-label letra">Nombre:</label>
                 <input asp-for="Nombre" class="form-control" />
                 <span asp-validation-for="Nombre" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Apellido" class="control-label letra"></label>
+                <label asp-for="Apellido" class="control-label letra">Apellido:</label>
                 <input asp-for="Apellido" class="form-control" />
                 <span asp-validation-for="Apellido" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Documento" class="control-label letra"></label>
+                <label asp-for="Documento" class="control-label letra">Numero de Documento:</label>
                 <input asp-for="Documento" class="form-control" />
                 <span asp-validation-for="Documento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Telefono" class="control-label letra"></label>
+                <label asp-for="Telefono" class="control-label letra">Numero de Telefono:</label>
                 <input asp-for="Telefono" class="form-control" />
                 <span asp-validation-for="Telefono" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Direccion" class="control-label letra"></label>
+                <label asp-for="Direccion" class="control-label letra">Direccion:</label>
                 <input asp-for="Direccion" class="form-control" />
                 <span asp-validation-for="Direccion" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Contrasenia" class="control-label letra"></label>
+                <label asp-for="Contrasenia" class="control-label letra">Contraseña:</label>
                 <input asp-for="Contrasenia" class="form-control" />
                 <span asp-validation-for="Contrasenia" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Rol" class="control-label letra"></label>
+                <label asp-for="Rol" class="control-label letra">Cargo asignado:</label>
                 <input asp-for="Rol" class="form-control" />
                 <span asp-validation-for="Rol" class="text-danger"></span>
             </div>
@@ -60,15 +59,16 @@
                 </div>
             </div>
             <div class="form-group" style="margin-left:34%;">
-                <input type="submit" value="Crear" class="btn btn-outline-primary" />
+                <input type="submit" value="Crear" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-danger">Atrás</a>
             </div>
         </form>
     </div>
 </div>
 
-<div style="margin-left:25%;">
-    <a asp-action="Index" class="btn btn-outline-danger">Atrás</a>
-</div>
+@*<div style="margin-left:25%;">
+    
+</div>*@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
