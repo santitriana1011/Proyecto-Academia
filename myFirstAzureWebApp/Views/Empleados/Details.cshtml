@@ -3,67 +3,49 @@
 @{
     ViewData["Title"] = "Detalles";
 }
-
-<h2>Detalles</h2>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/business-casual.css" />
+<h2 style="color:white; font-size:55px;">Detalles del Empleado</h2>
 
 <div>
-    <h4>Empleado</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Cargo)
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.Cargo) : @Html.DisplayFor(model => model.Cargo.Nombre)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Cargo.Nombre)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
+            
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.Nombre) : @Html.DisplayFor(model => model.Nombre)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Apellido)
+        
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.Apellido) : @Html.DisplayFor(model => model.Apellido)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Apellido)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Documento)
+        
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.Documento) : @Html.DisplayFor(model => model.Documento)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Documento)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Telefono)
+        
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.Telefono) :  @Html.DisplayFor(model => model.Telefono)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Telefono)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Direccion)
+        
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.Direccion) : @Html.DisplayFor(model => model.Direccion)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Direccion)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Contrasenia)
+        
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.Contrasenia) : @Html.DisplayFor(model => model.Contrasenia)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Contrasenia)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Rol)
+        
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.Rol) : @Html.DisplayFor(model => model.Rol)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Rol)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Estado)
+        
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.Estado) : @Html.DisplayFor(model => model.Estado)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Estado)
-        </dd>
+        
     </dl>
 </div>
 <div>
