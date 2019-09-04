@@ -12,24 +12,24 @@
 <div class="table-responsive">
     <table class="table table-striped table-hover table-borderless">
         <caption>ACUDIENTE</caption>
-        <thead class="thead-light">
+        <thead>
             <tr>
-                <th >
+                <th style="color:white;">
                     @Html.DisplayNameFor(model => model.Nombre)
                 </th>
-                <th >
+                <th style="color:white;">
                     @Html.DisplayNameFor(model => model.Apellido)
                 </th>
-                <th >
+                <th style="color:white;">
                     @Html.DisplayNameFor(model => model.Documento)
                 </th>
-                <th >
+                <th style="color:white;">
                     @Html.DisplayNameFor(model => model.Email)
                 </th>
-                <th >
+                <th style="color:white;">
                     @Html.DisplayNameFor(model => model.Telefono)
                 </th>
-                <th >
+                <th style="color:white;">
                     @Html.DisplayNameFor(model => model.Estado)
                 </th>
                 <th></th>
@@ -39,22 +39,22 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td >
+                    <td style="color:white;">
                         @Html.DisplayFor(modelItem => item.Nombre)
                     </td>
-                    <td >
+                    <td style="color:white;">
                         @Html.DisplayFor(modelItem => item.Apellido)
                     </td>
-                    <td >
+                    <td style="color:white;">
                         @Html.DisplayFor(modelItem => item.Documento)
                     </td>
-                    <td >
+                    <td style="color:white;">
                         @Html.DisplayFor(modelItem => item.Email)
                     </td>
-                    <td >
+                    <td style="color:white;">
                         @Html.DisplayFor(modelItem => item.Telefono)
                     </td>
-                    <td >
+                    <td style="color:white;">
                         @Html.DisplayFor(modelItem => item.Estado)
                     </td>
                     <td>
