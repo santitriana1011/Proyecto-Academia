@@ -9,57 +9,61 @@
 <p>
     <a asp-action="Create"><button class="btn btn-primary mt-5" style="width:320px; margin-left:35%;">Agregar un Nuevo Acudiente</button></a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th style="color:white;">
-                @Html.DisplayNameFor(model => model.Nombre)
-            </th>
-            <th style="color:white;">
-                @Html.DisplayNameFor(model => model.Apellido)
-            </th>
-            <th style="color:white;">
-                @Html.DisplayNameFor(model => model.Documento)
-            </th>
-            <th style="color:white;">
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th style="color:white;">
-                @Html.DisplayNameFor(model => model.Telefono)
-            </th>
-            <th style="color:white;">
-                @Html.DisplayNameFor(model => model.Estado)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td style="color:white;">
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td style="color:white;">
-                @Html.DisplayFor(modelItem => item.Apellido)
-            </td>
-            <td style="color:white;">
-                @Html.DisplayFor(modelItem => item.Documento)
-            </td>
-            <td style="color:white;">
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td style="color:white;">
-                @Html.DisplayFor(modelItem => item.Telefono)
-            </td>
-            <td style="color:white;">
-                @Html.DisplayFor(modelItem => item.Estado)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.AcudienteID" class="btn btn-outline-success">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.AcudienteID"  class="btn btn-outline-warning">Detalles</a>
-                <a asp-action="Delete" asp-route-id="@item.AcudienteID"  class="btn btn-outline-danger">Eliminar</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-borderless">
+        <caption>ACUDIENTE</caption>
+        <thead class="thead-light">
+            <tr>
+                <th >
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th >
+                    @Html.DisplayNameFor(model => model.Apellido)
+                </th>
+                <th >
+                    @Html.DisplayNameFor(model => model.Documento)
+                </th>
+                <th >
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th >
+                    @Html.DisplayNameFor(model => model.Telefono)
+                </th>
+                <th >
+                    @Html.DisplayNameFor(model => model.Estado)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td >
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td >
+                        @Html.DisplayFor(modelItem => item.Apellido)
+                    </td>
+                    <td >
+                        @Html.DisplayFor(modelItem => item.Documento)
+                    </td>
+                    <td >
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td >
+                        @Html.DisplayFor(modelItem => item.Telefono)
+                    </td>
+                    <td >
+                        @Html.DisplayFor(modelItem => item.Estado)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.AcudienteID" class="btn btn-outline-success">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.AcudienteID" class="btn btn-outline-warning">Detalles</a>
+                        <a asp-action="Delete" asp-route-id="@item.AcudienteID" class="btn btn-outline-danger">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

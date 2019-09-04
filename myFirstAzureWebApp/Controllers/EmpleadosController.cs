@@ -158,9 +158,11 @@ namespace myFirstAzureWebApp.Controllers
         }
         public async Task<IActionResult> Horarios()
         {
-            var applicationDbContext = _context.Empleado.Where(e=>e.Cargo.Nombre == "Instructor");
-            var applicationDbContextInstructores = applicationDbContext.GroupBy(n => n.Nombre);
-            var resultado = applicationDbContextInstructores.ToList();
+            //var applicationDbContext = _context.Empleado.Where(e=>e.Cargo.Nombre == "Instructor");
+            var applicationDbContext = _context.Horario.Where(h => h.Empleado.Nombre == "Instructor");
+            //var applicationDbContextInstructores = applicationDbContext.GroupBy(n => n.Nombre);
+            var applicationDbContextHorarios = applicationDbContext.GroupBy(e => e.Empleado.Nombre);
+            var resultado = applicationDbContextHorarios.ToList();
             foreach (var nombre in resultado)
             {
                 var n = nombre.Key;

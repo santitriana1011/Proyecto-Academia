@@ -37,50 +37,53 @@
                             <span class="section-heading-lower">We're Open</span>
                         </h2>
                         <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
-                            @foreach (var item in Model)
+                            @*foreach (var nombre in resultado)
                             {
-                                <li class="list-unstyled-item list-hours-item d-flex">
+                            var n = nombre.Key;
+                            foreach (var inst in item)
+                            {
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                            }
+                            }*@
+                            <li class="list-unstyled-item list-hours-item d-flex">
+                                <span class="ml-auto">Closed</span>
+                            </li>
+                            <li class="list-unstyled-item list-hours-item d-flex">
 
-                                    @*@Html.DisplayFor(modelItem => item.Nombre)*@
 
-                                    <span class="ml-auto">Closed</span>
-                                </li>
-                                <li class="list-unstyled-item list-hours-item d-flex">
 
-                                    @*@Html.DisplayFor(modelItem => item.Nombre)*@
+                                <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                            </li>
+                            <li class="list-unstyled-item list-hours-item d-flex">
 
-                                    <span class="ml-auto">7:00 AM to 8:00 PM</span>
-                                </li>
-                                <li class="list-unstyled-item list-hours-item d-flex">
+                                @*@Html.DisplayFor(modelItem => item.Nombre)*@
 
-                                    @*@Html.DisplayFor(modelItem => item.Nombre)*@
+                                <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                            </li>
+                            <li class="list-unstyled-item list-hours-item d-flex">
 
-                                    <span class="ml-auto">7:00 AM to 8:00 PM</span>
-                                </li>
-                                <li class="list-unstyled-item list-hours-item d-flex">
+                                @*@Html.DisplayFor(modelItem => item.Nombre)*@
 
-                                    @*@Html.DisplayFor(modelItem => item.Nombre)*@
+                                <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                            </li>
+                            <li class="list-unstyled-item list-hours-item d-flex">
 
-                                    <span class="ml-auto">7:00 AM to 8:00 PM</span>
-                                </li>
-                                <li class="list-unstyled-item list-hours-item d-flex">
+                                @*@Html.DisplayFor(modelItem => item.Nombre)*@
 
-                                    @*@Html.DisplayFor(modelItem => item.Nombre)*@
+                                <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                            </li>
+                            <li class="list-unstyled-item list-hours-item d-flex">
 
-                                    <span class="ml-auto">7:00 AM to 8:00 PM</span>
-                                </li>
-                                <li class="list-unstyled-item list-hours-item d-flex">
+                                @*@Html.DisplayFor(modelItem => item.Nombre)*@
 
-                                    @*@Html.DisplayFor(modelItem => item.Nombre)*@
+                                <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                            </li>
+                            <li class="list-unstyled-item list-hours-item d-flex">
 
-                                    <span class="ml-auto">7:00 AM to 8:00 PM</span>
-                                </li>
-                                <li class="list-unstyled-item list-hours-item d-flex">
+                                @*@Html.DisplayFor(modelItem => item.Nombre)*@
 
-                                    @*@Html.DisplayFor(modelItem => item.Nombre)*@
-
-                                    <span class="ml-auto">9:00 AM to 5:00 PM</span>
-                                </li>
+                                <span class="ml-auto">9:00 AM to 5:00 PM</span>
+                            </li>
                             }
                         </ul>
                         <p class="address mb-5">

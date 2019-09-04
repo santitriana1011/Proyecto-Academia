@@ -7,66 +7,24 @@
 <h2>Detalles</h2>
 
 <div>
-    <h4>Empleado</h4>
+    <h4>Horario</h4>
     <hr />
-    @*<dl class="dl-horizontal">*@
-        @*<dt>
-            @Html.DisplayNameFor(model => model.Cargo)
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleado)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Cargo.Nombre)
+            @Html.DisplayFor(model => model.Empleado.Nombre)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
+            @Html.DisplayNameFor(model => model.FechaHora)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Nombre)
+            @Html.DisplayFor(model => model.FechaHora)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Apellido)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Apellido)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Documento)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Documento)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Telefono)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Telefono)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Direccion)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Direccion)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Contrasenia)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Contrasenia)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Rol)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Rol)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Estado)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Estado)
-        </dd>
-    </dl>*@
+    </dl>
 </div>
 <div>
-    @*<a asp-action="Edit" asp-route-id="@Model.EmpleadoID" class="btn btn-outline-light">Editar</a> |
-    <a asp-action="Index" class="btn btn-outline-primary">Atrás</a>*@
+    <a asp-action="Edit" asp-route-id="@Model.HorarioID" class="btn btn-outline-light">Editar</a> |
+    <a asp-action="Index" class="btn btn-outline-primary">Atrás</a>
 </div>
