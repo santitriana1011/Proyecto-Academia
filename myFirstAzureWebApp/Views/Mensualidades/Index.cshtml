@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/business-casual.css" />
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <scr
-         ipt type="text/javascript">
+    <script type="text/javascript">
         google.charts.load('current', { 'packages': ['corechart'] });
         google.charts.setOnLoadCallback(drawChart);
 
@@ -35,10 +34,10 @@
         }
     </script>
 </head>
-<h2 class="mt-5" style="color:blue;">Mensualidad</h2>
+<h2 class="mt-2" style="color:white; font-size:55px;">Mensualidades Canceladas</h2>
 
 <p>
-    <a asp-action="Create"><button class="btn btn-outline-primary mt-5">Nuevo</button></a>
+    <a asp-action="Create"><button class="btn btn-primary mt-5" style="width:320px; margin-left:35%;">Agregar Mensualidad</button></a>
 </p>
 <table class="table">
     <thead>

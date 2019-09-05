@@ -25,6 +25,7 @@ namespace myFirstAzureWebApp.Data
         public DbSet<myFirstAzureWebApp.Models.HojaDeVida> HojaDeVida { get; set; }
         public DbSet<myFirstAzureWebApp.Models.Traspaso> Traspaso { get; set; }
         public DbSet<myFirstAzureWebApp.Models.Horario> Horario { get; set; }
+        public DbSet<myFirstAzureWebApp.Models.Encuentros> Encuentros { get; set; }
 
     }
 }

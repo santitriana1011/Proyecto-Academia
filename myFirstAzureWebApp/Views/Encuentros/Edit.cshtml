@@ -1,0 +1,46 @@
+﻿@model myFirstAzureWebApp.Models.Encuentros
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Encuentros</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="EncuentrosID" />
+            <div class="form-group">
+                <label asp-for="EscuelaID" class="control-label letra">Escuela</label>
+                <select asp-for="EscuelaID" class="form-control" asp-items="ViewBag.EscuelaID"></select>
+                <span asp-validation-for="EscuelaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Categoria" class="control-label"></label>
+                <input asp-for="Categoria" class="form-control" />
+                <span asp-validation-for="Categoria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombreEvento" class="control-label"></label>
+                <input asp-for="NombreEvento" class="form-control" />
+                <span asp-validation-for="NombreEvento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descripcion" class="control-label"></label>
+                <input asp-for="Descripcion" class="form-control" />
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
