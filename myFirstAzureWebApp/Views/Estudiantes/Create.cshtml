@@ -43,6 +43,36 @@
     </div>
 </div>
 
+<form id="form1" runat="server">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                Imagen agregada:
+                <br />
+                <asp:Image id="Image1" runat="server" />
+                <br />
+                <br />
+                Archivo:
+                <asp:FileUpload id="fuploadImagen" accept=".jpg" runat="server" class="form-control" />
+                <br />
+                <br />
+                Titulo de imagen:
+                <asp:TextBox id="txtTitulo" runat="server" class="form-control"></asp:TextBox>
+                <br />
+                <asp:Button id="btnSubir" runat="server" value="Agregar" class="btn btn-success" />
+            </div>
+        </div>
+
+        <div class="row">
+            <asp:Repeater id="Repeater1" runat="server">
+                <ItemTemplate>
+
+                </ItemTemplate>
+            </asp:Repeater>
+        </div>
+    </div>
+</form>
+
 <div>
     <a asp-action="Leones" class="btn btn-outline-danger">Atrás</a>
 </div>
