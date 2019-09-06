@@ -30,7 +30,7 @@
 </head>
 
 <body>
-   
+
     <section class="page-section">
         <div class="container">
             <div class="product-item">
@@ -45,7 +45,8 @@
                 <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" height="700px" width="900px" src="~/images/leones.jpg" alt="">
                 <div class="product-item-description d-flex mr-auto">
                     <div class="bg-faded p-5 rounded">
-                        <p class="mb-0">Nos llenamos de orgullo al presentarte a nuestros jugadores de nuestra Masia, nuestros pequeños de
+                        <p class="mb-0">
+                            Nos llenamos de orgullo al presentarte a nuestros jugadores de nuestra Masia, nuestros pequeños de
                             la categoria LEONES, ellos han sido campeones 3 veces del campeonato nacional "Esperanzas", ellos se caracterizan
                             por mostrarnos un juego limpio, lleno de compañerismo y carisma a la hora de estar en el terreno de juego.
                             <a class="btn btn-primary btn-xl" asp-controller="Estudiantes" asp-action="Leones">Ver más...</a>
@@ -69,9 +70,11 @@
                 <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" height="600px" width="900px" src="~/images/zebras.jpg" alt="">
                 <div class="product-item-description d-flex ml-auto">
                     <div class="bg-faded p-5 rounded">
-                        <p class="mb-0">Es increible la manera de formarse en el futbol profesional, nosotros en nuestra Academia formamos jugadores
-                        con valores y con tecnica a la hora de cada partido, esto se ve reflejado en la forma de jugar de nuestros muchachos de la
-                        categoria ZEBRAS, quienes son los campeones de 8 campeonatos Regionales y 2 Nacionales.</p>
+                        <p class="mb-0">
+                            Es increible la manera de formarse en el futbol profesional, nosotros en nuestra Academia formamos jugadores
+                            con valores y con tecnica a la hora de cada partido, esto se ve reflejado en la forma de jugar de nuestros muchachos de la
+                            categoria ZEBRAS, quienes son los campeones de 8 campeonatos Regionales y 2 Nacionales.
+                        </p>
                         <a class="btn btn-primary btn-xl" asp-controller="Estudiantes" asp-action="Zebras">Ver más...</a>
                     </div>
                 </div>
@@ -93,15 +96,20 @@
                 <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" height="505px" width="900px" src="~/images/gladiadores.jpg" alt="">
                 <div class="product-item-description d-flex mr-auto">
                     <div class="bg-faded p-5 rounded">
-                        <p class="mb-0">Los jugadores de nuestra Categoria Gladiadores son los 3 veces campeones de la Copa Americana de Futbol, han
-                        jugado en diferentes paises y mantienen un modo de juego excepcional para cada partido, son 23 jugadores que dan todo lo seguir
-                        haciendo grande a esta Academia.</p>
+                        <p class="mb-0">
+                            Los jugadores de nuestra Categoria Gladiadores son los 3 veces campeones de la Copa Americana de Futbol, han
+                            jugado en diferentes paises y mantienen un modo de juego excepcional para cada partido, son 23 jugadores que dan todo lo seguir
+                            haciendo grande a esta Academia.
+                        </p>
                         <a class="btn btn-primary btn-xl" asp-controller="Estudiantes" asp-action="Gladiadores">Ver más...</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <label>@ViewData["fname"]</label><br />
+    <img src="@ViewData["FileLocation"]"/>
 
 
     <!-- Bootstrap core JavaScript -->
