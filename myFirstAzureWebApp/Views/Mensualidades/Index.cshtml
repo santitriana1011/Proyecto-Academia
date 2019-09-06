@@ -8,38 +8,39 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/business-casual.css" />
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <scr
-         ipt type="text/javascript">
+    <script type="text/javascript">
         google.charts.load('current', { 'packages': ['corechart'] });
         google.charts.setOnLoadCallback(drawChart);
 
         function drawChart() {
 
             var data = google.visualization.arrayToDataTable([
-                ['Effort', 'Amount given'],
-                ['Mensualidad Paga', 50],
-                ['Mensualidad Sin Pago', 50],
+                ['Task', 'Hours per Day'],
+                ['Work', 11],
+                ['Eat', 2],
+                ['Commute', 2],
+                ['Watch TV', 2],
+                ['Sleep', 7]
             ]);
 
             var options = {
-                title: 'Balance General de Mensualidades, Mes De Octubre',
-                pieHole: 0.5,
-                pieSliceTextStyle: {
-                    color: 'white',
-                },
-                legend: 'none'
+                title: 'My Daily Activities'
             };
 
-            var chart = new google.visualization.PieChart(document.getElementById('donut_single'));
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
             chart.draw(data, options);
         }
     </script>
 </head>
-<h2 class="mt-5" style="color:blue;">Mensualidad</h2>
+<h2 class="mt-2" style="color:white; font-size:55px;">Mensualidades Canceladas</h2>
 
 <p>
-    <a asp-action="Create"><button class="btn btn-outline-primary mt-5">Nuevo</button></a>
+    <a asp-action="Create"><button class="btn btn-primary mt-5" style="width:320px; margin-left:35%;">Agregar Mensualidad</button></a>
 </p>
+
+<div id="container" style="width:100%;"></div>
+
 <table class="table">
     <thead>
         <tr>
@@ -90,4 +91,4 @@
     </tbody>
 </table>
 
-<div id="donut_single" style="width: 900px; height: 500px;"></div>
+<div id="piechart" style="width: 900px; height: 500px;"></div>

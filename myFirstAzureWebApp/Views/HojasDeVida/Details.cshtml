@@ -3,34 +3,28 @@
 @{
     ViewData["Title"] = "Detalles";
 }
-
-<h2>Detalles</h2>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/business-casual.css" />
+<h2 style="color:white; font-size:55px;">Detalles de las Hojas de Vida</h2>
 
 <div>
-    <h4>Hoja de vida</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Empleado)
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.Empleado) : @Html.DisplayFor(model => model.Empleado.Nombre)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Empleado.Nombre)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Especialidad)
+
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.Especialidad) : @Html.DisplayFor(model => model.Especialidad)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Especialidad)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.TiempoExperiencia)
+
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.TiempoExperiencia) : @Html.DisplayFor(model => model.TiempoExperiencia)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.TiempoExperiencia)
-        </dd>
+
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.HojaDeVidaID" class="btn btn-outline-warning">Editar</a> |
-    <a asp-action="Index" class="btn btn-outline-primary">Atrás</a>
+<div class="form-group" style="margin-left:34%;">
+    <a asp-action="Edit" asp-route-id="@Model.HojaDeVidaID" class="btn btn-warning">Editar</a> |
+    <a asp-action="Index" class="btn btn-primary">Atrás</a>
 </div>

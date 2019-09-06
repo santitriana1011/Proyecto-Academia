@@ -261,6 +261,27 @@ namespace myFirstAzureWebApp.Data.Migrations
                     b.ToTable("Empleado");
                 });
 
+            modelBuilder.Entity("myFirstAzureWebApp.Models.Encuentros", b =>
+                {
+                    b.Property<int>("EncuentrosID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Categoria");
+
+                    b.Property<string>("Descripcion");
+
+                    b.Property<int>("EscuelaID");
+
+                    b.Property<string>("NombreEvento");
+
+                    b.HasKey("EncuentrosID");
+
+                    b.HasIndex("EscuelaID");
+
+                    b.ToTable("Encuentros");
+                });
+
             modelBuilder.Entity("myFirstAzureWebApp.Models.Escuela", b =>
                 {
                     b.Property<int>("EscuelaID")
@@ -324,6 +345,23 @@ namespace myFirstAzureWebApp.Data.Migrations
                     b.HasIndex("EmpleadoID");
 
                     b.ToTable("HojaDeVida");
+                });
+
+            modelBuilder.Entity("myFirstAzureWebApp.Models.Horario", b =>
+                {
+                    b.Property<int>("HorarioID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("EmpleadoID");
+
+                    b.Property<DateTime>("FechaHora");
+
+                    b.HasKey("HorarioID");
+
+                    b.HasIndex("EmpleadoID");
+
+                    b.ToTable("Horario");
                 });
 
             modelBuilder.Entity("myFirstAzureWebApp.Models.Item", b =>
@@ -496,6 +534,14 @@ namespace myFirstAzureWebApp.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("myFirstAzureWebApp.Models.Encuentros", b =>
+                {
+                    b.HasOne("myFirstAzureWebApp.Models.Escuela", "Escuela")
+                        .WithMany()
+                        .HasForeignKey("EscuelaID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("myFirstAzureWebApp.Models.Estudiante", b =>
                 {
                     b.HasOne("myFirstAzureWebApp.Models.Acudiente", "Acudiente")
@@ -505,6 +551,14 @@ namespace myFirstAzureWebApp.Data.Migrations
                 });
 
             modelBuilder.Entity("myFirstAzureWebApp.Models.HojaDeVida", b =>
+                {
+                    b.HasOne("myFirstAzureWebApp.Models.Empleado", "Empleado")
+                        .WithMany()
+                        .HasForeignKey("EmpleadoID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("myFirstAzureWebApp.Models.Horario", b =>
                 {
                     b.HasOne("myFirstAzureWebApp.Models.Empleado", "Empleado")
                         .WithMany()

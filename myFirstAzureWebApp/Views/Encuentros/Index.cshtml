@@ -1,0 +1,76 @@
+﻿@model IEnumerable<myFirstAzureWebApp.Models.Encuentros>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Business Casual - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="~/css/business-casual.min.css" rel="stylesheet">
+
+</head>
+
+<p>
+    <a asp-action="Create"><button class="btn btn-primary mt-5" style="width:320px; margin-left:35%;">Crear Nuevo Evento</button></a>
+</p>
+
+@*<tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EscuelaID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Categoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreEvento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th></th>
+    </tr>*@
+
+@foreach (var item in Model)
+{
+    <section class="page-section about-heading">
+        <div class="container">
+            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="~/images/Versus.png" alt="">
+            <div class="about-heading-content">
+                <div class="row">
+                    <div class="col-xl-9 col-lg-10 mx-auto">
+                        <div class="bg-faded rounded p-5">
+                            <h2 class="section-heading mb-4">
+                                <span class="section-heading-upper">@Html.DisplayNameFor(model => model.Categoria) : @Html.DisplayFor(modelItem => item.Categoria)</span>
+                                <span class="section-heading-lower">Bellavista VS @Html.DisplayFor(modelItem => item.Escuela.Nombre)</span>
+                            </h2>
+                            <p><em>@Html.DisplayFor(modelItem => item.NombreEvento) , @Html.DisplayFor(modelItem => item.Descripcion)</em></p>
+
+                            <div>
+                                <a asp-action="Edit" asp-route-id="@item.EncuentrosID" class="btn btn-outline-success">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.EncuentrosID" class="btn btn-outline-warning">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.EncuentrosID" class="btn btn-outline-danger">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+

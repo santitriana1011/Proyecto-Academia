@@ -30,9 +30,7 @@
                     @Html.DisplayFor(modelItem => item.Novedades)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.TraspasoID" class="btn btn-outline-success">Editar</a>
-                    <a asp-action="Details" asp-route-id="@item.TraspasoID"  class="btn btn-outline-warning">Detalles</a>
-                    <a asp-action="Delete" asp-route-id="@item.TraspasoID" class="btn btn-outline-danger">Eliminar</a>
+                    
                 </td>
             </tr>
     }
@@ -62,7 +60,11 @@
     <link href="~/css/business-casual.min.css" rel="stylesheet">
 
 </head>
+<h2 class="mt-2" style="color:white; font-size:55px;">Seccion de Traspasos</h2>
 
+<p>
+    <a asp-action="Create"><button class="btn btn-primary mt-5" style="width:320px; margin-left:35%;">Agregar un Nuevo Traspaso</button></a>
+</p>
 <body>
 
     <section class="page-section clearfix">
@@ -74,9 +76,14 @@
                     <div class="card-body">
                         <h5 class="card-title"> @Html.DisplayFor(modelItem => item.Estudiante.Nombre)</h5>
                         <p class="card-text"> @Html.DisplayFor(modelItem => item.Escuela.Nombre)</p>
-                        <p class="card-text"><small class="text-muted">@Html.DisplayFor(modelItem => item.FechaInicio)</small></p>
-                        <p class="card-text"><small class="text-muted">@Html.DisplayFor(modelItem => item.FechaFin)</small></p>
-                        <p class="card-text"><small class="text-muted">@Html.DisplayFor(modelItem => item.Novedades)</small></p>
+                        <p class="card-text"><small>@Html.DisplayFor(modelItem => item.FechaInicio)</small></p>
+                        <p class="card-text"><small>@Html.DisplayFor(modelItem => item.FechaFin)</small></p>
+                        <p class="card-text"><small>@Html.DisplayFor(modelItem => item.Novedades)</small></p>
+                    </div>
+                    <div>
+                        <a asp-action="Edit" asp-route-id="@item.TraspasoID" class="btn btn-outline-success">Editar</a>
+                        <a asp-action="Details" asp-route-id="@item.TraspasoID" class="btn btn-outline-warning">Detalles</a>
+                        <a asp-action="Delete" asp-route-id="@item.TraspasoID" class="btn btn-outline-danger">Eliminar</a>
                     </div>
                 </div>
             }

@@ -46,7 +46,7 @@
                             </a>
                         </li>
                         <li class="nav-item px-lg-4">
-                            <a class="nav-link text-uppercase text-expanded" asp-controller="Home" asp-action="Resultados">Resultados</a>
+                            <a class="nav-link text-uppercase text-expanded" asp-controller="Encuentros" asp-action="Index">Resultados</a>
                         </li>
                         <li class="nav-item px-lg-4">
                             <a class="nav-link text-uppercase text-expanded" asp-controller="Home" asp-action="Uniformes">Uniformes</a>
@@ -54,13 +54,10 @@
                         <li class="nav-item px-lg-4">
                             <a class="nav-link text-uppercase text-expanded" asp-controller="Home" asp-action="Jugadores">Jugadores</a>
                         </li>
-                        <li class="nav-item px-lg-4 dropdown-menu">
-                            <a class="nav-link text-uppercase text-expanded" asp-controller="Home" asp-action="Jugadores">Jugadores</a>
-                        </li>
-                        
 
+                        
                         @*<li class="nav-item px-lg-4">
-             <a class="nav-link text-uppercase text-expanded" asp-controller="Empleados" asp-action="Horarios">Horarios</a>
+             
         </li>*@
                         @*<li class="nav-item px-lg-4">
             <a class="nav-link text-uppercase text-expanded" asp-controller="Traspasos" asp-action="Index">Traspasos</a>
@@ -107,6 +104,7 @@
 
     </environment>
     <environment exclude="Development">
+       
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
                 asp-fallback-test="window.jQuery"
                 crossorigin="anonymous"

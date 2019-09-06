@@ -3,10 +3,10 @@
 @{
     ViewData["Title"] = "Editar";
 }
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/business-casual.css" />
+<h2 style="color:white; font-size:55px;">Editando Jugador</h2>
 
-<h2>Editar</h2>
-
-<h4>Estudiante</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -14,39 +14,40 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="EstudianteID" />
             <div class="form-group">
-                <label asp-for="AcudienteID" class="control-label"></label>
+                <label asp-for="AcudienteID" class="control-label letra">Acudiente</label>
                 <select asp-for="AcudienteID" class="form-control" asp-items="ViewBag.AcudienteID"></select>
                 <span asp-validation-for="AcudienteID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Nombre" class="control-label"></label>
+                <label asp-for="Nombre" class="control-label letra"></label>
                 <input asp-for="Nombre" class="form-control" />
                 <span asp-validation-for="Nombre" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Apellido" class="control-label"></label>
+                <label asp-for="Apellido" class="control-label letra"></label>
                 <input asp-for="Apellido" class="form-control" />
                 <span asp-validation-for="Apellido" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Documento" class="control-label"></label>
+                <label asp-for="Documento" class="control-label letra"></label>
                 <input asp-for="Documento" class="form-control" />
                 <span asp-validation-for="Documento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="FechaNacimiento" class="control-label"></label>
+                <label asp-for="FechaNacimiento" class="control-label letra"></label>
                 <input asp-for="FechaNacimiento" class="form-control" />
                 <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-outline-success" asp-action="Leones" />
+            <div class="form-group" style="margin-left:34%;">
+                <input type="submit" value="Guardar" class="btn btn-success" asp-action="Leones" />
+                <a asp-action="Leones" class="btn btn-primary">Atrás</a>
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Leones" class="btn btn-outline-primary">Atrás</a>
+    
 </div>
 
 @section Scripts {

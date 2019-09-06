@@ -99,7 +99,7 @@ p {
 }
 
 #mainNav {
-    background-color: rgba(66, 66, 66);
+    background-color: rgba(66, 66, 66, 0.5) ;
     font-family: 'Raleway';
 }
 
