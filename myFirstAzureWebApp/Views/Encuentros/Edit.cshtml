@@ -3,10 +3,9 @@
 @{
     ViewData["Title"] = "Edit";
 }
-
-<h2>Edit</h2>
-
-<h4>Encuentros</h4>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/business-casual.css" />
+<h2 style="color:white; font-size:55px;">Editando Evento</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -19,28 +18,26 @@
                 <span asp-validation-for="EscuelaID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Categoria" class="control-label"></label>
+                <label asp-for="Categoria" class="control-label letra"></label>
                 <input asp-for="Categoria" class="form-control" />
                 <span asp-validation-for="Categoria" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="NombreEvento" class="control-label"></label>
+                <label asp-for="NombreEvento" class="control-label letra"></label>
                 <input asp-for="NombreEvento" class="form-control" />
                 <span asp-validation-for="NombreEvento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Descripcion" class="control-label"></label>
+                <label asp-for="Descripcion" class="control-label letra"></label>
                 <input asp-for="Descripcion" class="form-control" />
                 <span asp-validation-for="Descripcion" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+            <div class="form-group" style="margin-left:34%;">
+                <input type="submit" value="Guardar" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-danger">Volver</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 

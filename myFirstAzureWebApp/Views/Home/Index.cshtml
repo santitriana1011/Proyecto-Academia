@@ -57,6 +57,8 @@
 <body>
 
 
+
+
     <section class="page-section clearfix">
         <div class="container">
             <div class="intro">
@@ -72,7 +74,32 @@
                         las inscripciones se puede hacer de dos maneras.
                     </p>
                     <div class="intro-button mx-auto">
-                        <a class="btn btn-primary btn-xl" href="#">Ver Informacion!</a>
+                        <a class="btn btn-primary btn-xl" data-toggle="modal" data-target="#modelId">¡Ver Informacion!</a>
+                    </div>
+
+                    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Proceso de Inscripcion</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Bienvenidos al Proceso de Inscripcion, Este proceso consta de dos ingresos, por cuestiones de
+                                    seguridad de esta plataforma manejamos dos formularios ya que nuestros estudiantes no superan los
+                                    17 años, por consiguiente son menores de edad, por esta razon primero solicitamos los datos mas reelevantes
+                                    de el acudiente de el estudiante, para en caso de emergencias tener un contacto a quien avisar cada novedad
+                                    sobre nuestro futuro jugador, si usted acepta los terminos y condiciones para inscribir a dicho nuevo estudiante haga click
+                                    en el boton continuar.
+                                </div>
+                                <div class="modal-footer">
+                                    <a class="btn btn-primary btn-xl" asp-controller="Acudientes" asp-action="Create">Continuar</a>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -109,15 +136,52 @@
                 <div class="intro-text left-0 text-center bg-faded p-5 rounded">
                     <h2 class="section-heading mb-4">
                         <span class="section-heading-upper">Publicado hoy</span>
-                        <span class="section-heading-lower">Inscripciones abiertas</span>
+                        <span class="section-heading-lower">Seccion Comentarios</span>
                     </h2>
                     <p class="mb-3">
-                        Hoy inician nuestras inscripciones! te esperamos para
-                        que te unas a nuestra prestigiosa Academia Bellavista,
-                        las inscripciones se puede hacer de dos maneras.
+                        Si tienes alguna duda, sugerencia o algo que aportarnos
+                        por favor haz click aqui y envianos tu aporte.
                     </p>
                     <div class="intro-button mx-auto">
-                        <a class="btn btn-primary btn-xl" href="#">Ver Informacion!</a>
+                        <a class="btn btn-primary btn-xl" data-toggle="modal" data-target="#modelId2">Enviar Sugerencia</a>
+                    </div>
+                    <div class="modal fade" id="modelId2" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Envia tu Sugerencia:</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <input style="width:450px; height:100px;" />
+                                </div>
+                                <div class="modal-footer">
+                                    <a class="btn btn-primary btn-xl" data-toggle="modal" data-target="#modelId3">Enviar</a>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="modelId3" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Envio de Sugerencia:</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Gracias por tu colaboracion comenzaremos ahora mismo a trabajar en tu sugerencia.</p>
+                                </div>
+                                <div class="modal-footer">
+                                   
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -150,7 +214,7 @@
     <!-- Bootstrap core JavaScript -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
+  
 </body>
 
 </html>

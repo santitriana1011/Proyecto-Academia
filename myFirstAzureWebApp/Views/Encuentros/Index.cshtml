@@ -26,47 +26,51 @@
 </head>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create"><button class="btn btn-primary mt-5" style="width:320px; margin-left:35%;">Crear Nuevo Evento</button></a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.EscuelaID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Categoria)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NombreEvento)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Descripcion)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Escuela.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Categoria)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NombreEvento)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descripcion)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.EncuentrosID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.EncuentrosID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.EncuentrosID">Delete</a>
-            </td>
-        </tr>
+
+@*<tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EscuelaID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Categoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreEvento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th></th>
+    </tr>*@
+
+@foreach (var item in Model)
+{
+    <section class="page-section about-heading">
+        <div class="container">
+            <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="~/images/Versus.png" alt="">
+            <div class="about-heading-content">
+                <div class="row">
+                    <div class="col-xl-9 col-lg-10 mx-auto">
+                        <div class="bg-faded rounded p-5">
+                            <h2 class="section-heading mb-4">
+                                <span class="section-heading-upper">@Html.DisplayNameFor(model => model.Categoria) : @Html.DisplayFor(modelItem => item.Categoria)</span>
+                                <span class="section-heading-lower">Bellavista VS @Html.DisplayFor(modelItem => item.Escuela.Nombre)</span>
+                            </h2>
+                            <p><em>@Html.DisplayFor(modelItem => item.NombreEvento) , @Html.DisplayFor(modelItem => item.Descripcion)</em></p>
+
+                            <div>
+                                <a asp-action="Edit" asp-route-id="@item.EncuentrosID" class="btn btn-outline-success">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.EncuentrosID" class="btn btn-outline-warning">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.EncuentrosID" class="btn btn-outline-danger">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 }
-    </tbody>
-</table>
+
+

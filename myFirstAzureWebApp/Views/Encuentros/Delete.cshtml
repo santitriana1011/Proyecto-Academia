@@ -3,43 +3,34 @@
 @{
     ViewData["Title"] = "Delete";
 }
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/business-casual.css" />
+<h2 style="color:white; font-size:55px;">Eliminar Evento</h2>
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
+<h3 style="color:white; font-size:45px;">¿Está seguro de eliminar este Evento?</h3>
 <div>
-    <h4>Encuentros</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Escuela)
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.Escuela) : @Html.DisplayFor(model => model.Escuela.Nombre)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Escuela.Nombre)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Categoria)
+
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.Categoria) : @Html.DisplayFor(model => model.Categoria)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Categoria)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.NombreEvento)
+
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.NombreEvento) : @Html.DisplayFor(model => model.NombreEvento)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.NombreEvento)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Descripcion)
+
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.Descripcion) : @Html.DisplayFor(model => model.Descripcion)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
     </dl>
-    
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="EncuentrosID" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-primary">Volver</a>
     </form>
 </div>

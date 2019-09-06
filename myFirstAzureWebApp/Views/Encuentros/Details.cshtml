@@ -3,40 +3,32 @@
 @{
     ViewData["Title"] = "Details";
 }
-
-<h2>Details</h2>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/business-casual.css" />
+<h2 style="color:white; font-size:55px;">Detalles del Evento</h2>
 
 <div>
-    <h4>Encuentros</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Escuela)
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.Escuela) : @Html.DisplayFor(model => model.Escuela.Nombre)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Escuela.Nombre)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Categoria)
+
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.Categoria) : @Html.DisplayFor(model => model.Categoria)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Categoria)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.NombreEvento)
+
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.NombreEvento) : @Html.DisplayFor(model => model.NombreEvento)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.NombreEvento)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Descripcion)
+
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.Descripcion) :  @Html.DisplayFor(model => model.Descripcion)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
+
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.EncuentrosID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div style="margin-left:34%;">
+    <a asp-action="Edit" asp-route-id="@Model.EncuentrosID" class="btn btn-primary">Editar</a> |
+    <a asp-action="Index" class="btn btn-danger">Volver</a>
 </div>

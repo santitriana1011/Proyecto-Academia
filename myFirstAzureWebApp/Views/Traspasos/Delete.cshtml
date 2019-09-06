@@ -3,49 +3,39 @@
 @{
     ViewData["Title"] = "Eliminar";
 }
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/business-casual.css" />
+<h2 style="color:white; font-size:55px;">Eliminar Traspaso</h2>
 
-<h2>Eliminar</h2>
-
-<h3>¿Está seguro de eliminar este registro?</h3>
+<h3 style="color:white; font-size:45px;">¿Está seguro de eliminar este registro?</h3>
 <div>
-    <h4>Traspaso</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Estudiante)
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.Estudiante) : @Html.DisplayFor(model => model.Estudiante.Nombre)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Estudiante.Nombre)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Escuela)
+        
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.Escuela) : @Html.DisplayFor(model => model.Escuela.Nombre)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Escuela.Nombre)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.FechaInicio)
+        
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.FechaInicio) : @Html.DisplayFor(model => model.FechaInicio)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.FechaInicio)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.FechaFin)
+        
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.FechaFin) : @Html.DisplayFor(model => model.FechaFin)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.FechaFin)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Novedades)
+        
+        <dt class="letra">
+            @Html.DisplayNameFor(model => model.Novedades) : @Html.DisplayFor(model => model.Novedades)
         </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Novedades)
-        </dd>
+        
     </dl>
 
     <form asp-action="Delete">
         <input type="hidden" asp-for="TraspasoID" />
-        <input type="submit" value="Eliminar" class="btn btn-outline-default" />|
-        <a asp-action="Index" class="btn btn-outline-primary">Atrás</a>
+        <input type="submit" value="Eliminar" class="btn btn-danger" />|
+        <a asp-action="Index" class="btn btn-primary">Atrás</a>
     </form>
 </div>
