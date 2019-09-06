@@ -60,7 +60,7 @@ namespace myFirstAzureWebApp.Controllers
             {
                 _context.Add(acudiente);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Create", "Estudiantes");
             }
             return View(acudiente);
         }

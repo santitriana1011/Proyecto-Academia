@@ -63,7 +63,7 @@ namespace myFirstAzureWebApp.Controllers
             {
                 _context.Add(estudiante);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Contact", "Home");
             }
             ViewData["AcudienteID"] = new SelectList(_context.Acudiente, "AcudienteID", "Nombre", estudiante.AcudienteID);
             return View(estudiante);
