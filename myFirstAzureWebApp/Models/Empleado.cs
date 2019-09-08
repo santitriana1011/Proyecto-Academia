@@ -22,5 +22,6 @@ namespace myFirstAzureWebApp.Models
         [StringLength(256)]
         public string Rol { get; set; }
         public Boolean Estado { get; set; } = true;
+        //public List<Horario> Horarios { get; set; }
     }
 }

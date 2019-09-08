@@ -15,18 +15,13 @@ namespace myFirstAzureWebApp.Controllers
 {
     public class EstudiantesController : Controller
     {
-
         private readonly IHostingEnvironment he;
-        public EstudiantesController(IHostingEnvironment e)
-        {
-            he = e;
-        }
-
         private readonly ApplicationDbContext _context;
 
-        public EstudiantesController(ApplicationDbContext context)
+        public EstudiantesController(ApplicationDbContext context, IHostingEnvironment e)
         {
             _context = context;
+            he = e;
         }
 
         // GET: Estudiantes
@@ -35,18 +30,8 @@ namespace myFirstAzureWebApp.Controllers
             var applicationDbContext = _context.Estudiante.Include(e => e.Acudiente);
             return View(await applicationDbContext.ToListAsync());
         }
+        
 
-        public IActionResult Create(string fullName, IFormFile pic)
-        {
-            ViewData["fname"] = fullName;
-            if (pic != null)
-            {
-                var fileName = Path.Combine(he.WebRootPath, Path.GetFileName(pic.FileName));
-                pic.CopyTo(new FileStream(fileName, FileMode.Create));
-                ViewData["fileLocation"] = "/" + Path.GetFileName(pic.FileName);
-            }
-            return View();
-        }
 
         // GET: Estudiantes/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -68,9 +53,16 @@ namespace myFirstAzureWebApp.Controllers
         }
 
         // GET: Estudiantes/Create
-        public IActionResult Create()
+        public IActionResult Create(string fullName, IFormFile pic)
         {
             ViewData["AcudienteID"] = new SelectList(_context.Acudiente, "AcudienteID", "Nombre");
+            ViewData["fname"] = fullName;
+            if (pic != null)
+            {
+                var fileName = Path.Combine(he.WebRootPath, Path.GetFileName(pic.FileName));
+                pic.CopyTo(new FileStream(fileName, FileMode.Create));
+                ViewData["fileLocation"] = "/" + Path.GetFileName(pic.FileName);
+            }
             return View();
         }
 
