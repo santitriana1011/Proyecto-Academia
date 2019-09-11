@@ -1,83 +1,56 @@
-﻿@model  IEnumerable<myFirstAzureWebApp.Models.Estudiante>
-@{ 
+﻿@model IEnumerable<myFirstAzureWebApp.Models.Estudiante>
+@{
     ViewData["Title"] = "Estudiante";
 }
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
+<style>
+    .players {
+        height: 300px;
+        width: 500px;
+    }
+</style>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<p>
+    <a asp-action="Create"><button class="btn btn-primary mt-5" style="width:25%; margin-left:35%;">Nuevo Estudiante</button></a>
+</p>
 
-    <title>Business Casual - Start Bootstrap Theme</title>
+<section>
+    <div class="container">
+        <div class="row mb-5">
 
-    <!-- Bootstrap core CSS -->
-    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="~/css/business-casual.min.css" rel="stylesheet">
-    <style>
-        .players{
-            height: 300px;
-            width: 500px;
-        }
-    </style>
-
-</head>
-
-<body>
-
-    <p>
-        <a asp-action="Create"><button class="btn btn-primary mt-5" style="width:25%; margin-left:35%;">Nuevo Estudiante</button></a>
-    </p>
-
-    <section>
-        <div class="container">
-            <div class="row mb-5">
+            @foreach (var item in Model)
+            {
                 <div class="col-md-4 col-sm-6">
-                    @foreach (var item in Model)
-                    {
-                        <div class="card text-center" style="max-width: 440px; display:inline-block; margin-right:12px; margin-left:24px; margin-top:9px;">
-                            <div class="card-block">
-                                <img src="~/images/mbappe.jpg" class="players img-fluid " />
-                                <div class="card-title">
-                                    <h4>@Html.DisplayFor(modelItem => item.Nombre)</h4>
-                                    @Html.DisplayFor(modelItem => item.Apellido)
-                                </div>
-                                <div class="card-text">
-                                    <p>@Html.DisplayFor(modelItem => item.Acudiente.Nombre)</p>
-                                    <p>@Html.DisplayFor(modelItem => item.Documento)</p>
-                                    <p>@Html.DisplayFor(modelItem => item.FechaNacimiento)</p>
-                                </div>
-                                <td>
-                                    <a asp-action="Edit" asp-route-id="@item.EstudianteID" class="btn btn-outline-success">Editar</a> ||
-                                    <a asp-action="Details" asp-route-id="@item.EstudianteID" class="btn btn-outline-warning">Detalles</a> ||
-                                    <a asp-action="Delete" asp-route-id="@item.EstudianteID" class="btn btn-outline-danger">Eliminar</a>
-                                </td>
+                    <div class="card text-center" style="max-width: 440px; display:inline-block; margin-right:12px; margin-left:24px; margin-top:9px;">
+                        <div class="card-block">
+                            <img src="@ViewData["FileLocation"]"  class="players img-fluid " />
+                            <div class="card-title">
+                                <h4>@Html.DisplayFor(modelItem => item.Nombre)</h4>
+                                @Html.DisplayFor(modelItem => item.Apellido)
                             </div>
+                            <div class="card-text">
+                                <p>@Html.DisplayFor(modelItem => item.Acudiente.Nombre)</p>
+                                <p>@Html.DisplayFor(modelItem => item.Documento)</p>
+                                <p>@Html.DisplayFor(modelItem => item.FechaNacimiento)</p>
+                            </div>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.EstudianteID" class="btn btn-outline-success">Editar</a> ||
+                                <a asp-action="Details" asp-route-id="@item.EstudianteID" class="btn btn-outline-warning">Detalles</a> ||
+                                <a asp-action="Delete" asp-route-id="@item.EstudianteID" class="btn btn-outline-danger">Eliminar</a>
+                            </td>
                         </div>
-                    }
+                    </div>
                 </div>
-            </div>
+            }
+
         </div>
-        
-    </section>
+    </div>
 
-   
+</section>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<label>@ViewData["fname"]</label><br />
 
-</body>
 
-</html>
+
 

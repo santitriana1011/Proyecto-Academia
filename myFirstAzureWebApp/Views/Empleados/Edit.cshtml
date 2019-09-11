@@ -8,13 +8,13 @@
 <h2 style="color:white; font-size:55px;">Editando Empleado</h2>
 
 <hr />
-<div class="row">
+<div class="row" style="margin-left:30%;">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="EmpleadoID" />
             <div class="form-group">
-                <label asp-for="CargoID" class="control-label letra"></label>
+                <label asp-for="CargoID" class="control-label letra">Cargo</label>
                 <select asp-for="CargoID" class="form-control" asp-items="ViewBag.CargoID"></select>
                 <span asp-validation-for="CargoID" class="text-danger"></span>
             </div>

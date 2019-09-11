@@ -4,7 +4,7 @@
     ViewData["Title"] = "Escuelas";
 }
 
-<h2 class="mt-2" style="color:white; font-size:55px;">Escuelas Vinculadas con Nosotros</h2>
+<h2 class="mt-2" style="font-size:55px;">Escuelas Vinculadas con Nosotros</h2>
 
 <p>
     <a asp-action="Create"><button class="btn btn-primary mt-5" style="width:320px; margin-left:35%;">Vincular Nueva Escuela</button></a>
@@ -12,16 +12,16 @@
 <table class="table">
     <thead>
         <tr>
-            <th style="color:white;">
+            <th>
                 @Html.DisplayNameFor(model => model.Nombre)
             </th>
-            <th style="color:white;">
+            <th>
                 @Html.DisplayNameFor(model => model.Direccion)
             </th>
-            <th style="color:white;">
+            <th>
                 @Html.DisplayNameFor(model => model.Telefono)
             </th>
-            <th style="color:white;">
+            <th>
                 @Html.DisplayNameFor(model => model.Estado)
             </th>
             <th></th>
@@ -30,16 +30,16 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td style="color:white;">
+            <td>
                 @Html.DisplayFor(modelItem => item.Nombre)
             </td>
-            <td style="color:white;">
+            <td>
                 @Html.DisplayFor(modelItem => item.Direccion)
             </td>
-            <td style="color:white;">
+            <td>
                 @Html.DisplayFor(modelItem => item.Telefono)
             </td>
-            <td style="color:white;">
+            <td>
                 @Html.DisplayFor(modelItem => item.Estado)
             </td>
             <td>

@@ -33,7 +33,7 @@
         }
     </script>
 </head>
-<h2 class="mt-2" style="color:white; font-size:55px;">Mensualidades Canceladas</h2>
+<h2 class="mt-2" style=" font-size:55px;">Mensualidades Canceladas</h2>
 
 <p>
     <a asp-action="Create"><button class="btn btn-primary mt-5" style="width:320px; margin-left:35%;">Agregar Mensualidad</button></a>
@@ -44,19 +44,19 @@
 <table class="table">
     <thead>
         <tr>
-            <th style="color:white;">
+            <th>
                 @Html.DisplayNameFor(model => model.Acudiente)
             </th>
-            <th style="color:white;">
+            <th>
                 @Html.DisplayNameFor(model => model.FechaPago)
             </th>
-            <th style="color:white;">
+            <th>
                 @Html.DisplayNameFor(model => model.Valor)
             </th>
-            <th style="color:white;">
+            <th>
                 @Html.DisplayNameFor(model => model.Mes)
             </th>
-            <th style="color:white;">
+            <th>
                 @Html.DisplayNameFor(model => model.Anio)
             </th>
             <th></th>
@@ -66,19 +66,19 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td style="color:white;">
+                <td>
                     @Html.DisplayFor(modelItem => item.Acudiente.Nombre)
                 </td>
-                <td style="color:white;">
+                <td>
                     @Html.DisplayFor(modelItem => item.FechaPago)
                 </td>
-                <td style="color:white;">
+                <td>
                     @Html.DisplayFor(modelItem => item.Valor)
                 </td>
-                <td style="color:white;">
+                <td>
                     @Html.DisplayFor(modelItem => item.Mes)
                 </td>
-                <td style="color:white;">
+                <td>
                     @Html.DisplayFor(modelItem => item.Anio)
                 </td>
                 <td>

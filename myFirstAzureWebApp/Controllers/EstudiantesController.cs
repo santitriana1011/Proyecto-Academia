@@ -15,8 +15,8 @@ namespace myFirstAzureWebApp.Controllers
 {
     public class EstudiantesController : Controller
     {
-        private readonly IHostingEnvironment he;
         private readonly ApplicationDbContext _context;
+        private readonly IHostingEnvironment he;
 
         public EstudiantesController(ApplicationDbContext context, IHostingEnvironment e)
         {
@@ -30,8 +30,11 @@ namespace myFirstAzureWebApp.Controllers
             var applicationDbContext = _context.Estudiante.Include(e => e.Acudiente);
             return View(await applicationDbContext.ToListAsync());
         }
-        
-
+        public IActionResult Jugadores()
+        {
+            
+            return View();
+        }
 
         // GET: Estudiantes/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -53,16 +56,10 @@ namespace myFirstAzureWebApp.Controllers
         }
 
         // GET: Estudiantes/Create
-        public IActionResult Create(string fullName, IFormFile pic)
+        public IActionResult Create()
         {
             ViewData["AcudienteID"] = new SelectList(_context.Acudiente, "AcudienteID", "Nombre");
-            ViewData["fname"] = fullName;
-            if (pic != null)
-            {
-                var fileName = Path.Combine(he.WebRootPath, Path.GetFileName(pic.FileName));
-                pic.CopyTo(new FileStream(fileName, FileMode.Create));
-                ViewData["fileLocation"] = "/" + Path.GetFileName(pic.FileName);
-            }
+            
             return View();
         }
 
@@ -170,8 +167,15 @@ namespace myFirstAzureWebApp.Controllers
         {
             return _context.Estudiante.Any(e => e.EstudianteID == id);
         }
-        public async Task<IActionResult> Leones()
+        public async Task<IActionResult> Leones(string fullName, IFormFile PhotoPath)
         {
+            ViewData["fname"] = fullName;
+            if (PhotoPath != null)
+            {
+                var fileName = Path.Combine(he.WebRootPath, Path.GetFileName(PhotoPath.FileName));
+                PhotoPath.CopyTo(new FileStream(fileName, FileMode.Create));
+                ViewData["fileLocation"] = "/" + Path.GetFileName(PhotoPath.FileName);
+            }
             var applicationDbContext = _context.Estudiante.Include(e => e.Acudiente);
             return View(await applicationDbContext.ToListAsync());
         }

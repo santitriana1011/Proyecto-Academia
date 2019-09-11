@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="~/css/business-casual.css" />
 <h2 style="color:white;">Creando Nuevo Evento</h2>
 <hr />
-<div class="row">
+<div class="row" style="margin-left:30%;">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -21,12 +21,12 @@
                 <span asp-validation-for="Categoria" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="NombreEvento" class="control-label letra""></label>
+                <label asp-for="NombreEvento" class="control-label letra"></label>
                 <input asp-for="NombreEvento" class="form-control" />
                 <span asp-validation-for="NombreEvento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Descripcion" class="control-label letra""></label>
+                <label asp-for="Descripcion" class="control-label letra"></label>
                 <input asp-for="Descripcion" class="form-control" />
                 <span asp-validation-for="Descripcion" class="text-danger"></span>
             </div>

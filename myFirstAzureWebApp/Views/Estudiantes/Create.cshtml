@@ -8,9 +8,9 @@
 <h2 style="color:white;">Creando nuevo Jugador</h2>
 
 <hr />
-<div class="row">
+<div class="row" style="margin-left:30%;">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="AcudienteID" class="control-label letra">Acudiente</label>
@@ -36,23 +36,25 @@
                 <input asp-for="FechaNacimiento" class="form-control" />
                 <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="PhotoPath" class="control-label letra"></label>
+           
+                <input asp-for="PhotoPath" type="file" name="PhotoPath" class="form-control" />
+                <span asp-validation-for="PhotoPath" class="text-danger"></span>
+            </div>
             <div class="form-group" style="margin-left:34%;">
-                <input type="submit" value="Crear" class="btn btn-primary" />
+                <input type="submit" value="Crear" class="btn btn-primary" asp-action="Leones" />
                 <a asp-action="Leones" class="btn btn-danger">Atrás</a>
             </div>
         </form>
+
+        @*<form method="post" action="/Estudiantes/Leones" >
+            <input type="file" name="pic" /><br />
+            <input type="text" name="fullName" /><br />
+            <input type="submit" value="Go" />
+        </form>*@
     </div>
 </div>
-
-
-
-<form method="post" action="/Home/Jugadores" enctype="multipart/form-data">
-    <input type="file" name="pic" /><br />
-    <input type="text" name="fullName" /><br />
-    <input type="submit" value="Go" />
-</form>
-
-
 
 <div>
 

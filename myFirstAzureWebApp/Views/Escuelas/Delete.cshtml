@@ -7,10 +7,10 @@
 <link rel="stylesheet" href="~/css/business-casual.css" />
 <h2 style="color:white; font-size:55px;">Eliminar</h2>
 
-<h3 style="color:white; font-size:45px;">¿Está seguro de eliminar esta escuela?</h3>
+<h3 style=" font-size:45px;">¿Está seguro de eliminar esta escuela?</h3>
 <div>
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal" style="margin-left:30%;">
         <dt class="letra">
             @Html.DisplayNameFor(model => model.Nombre) : @Html.DisplayFor(model => model.Nombre)
         </dt>
@@ -29,7 +29,7 @@
 
     </dl>
 
-    <form asp-action="Delete">
+    <form asp-action="Delete" style="margin-left:30%;">
         <input type="hidden" asp-for="EscuelaID" />
         <input type="submit" value="Eliminar" class="btn btn-danger" /> |
         <a asp-action="Index" class="btn btn-primary">Atrás</a>

@@ -12,13 +12,13 @@
 <table class="table">
     <thead>
         <tr>
-            <th style="color:white;">
+            <th>
                 @Html.DisplayNameFor(model => model.Nombre)
             </th>
-            <th style="color:white;">
+            <th>
                 @Html.DisplayNameFor(model => model.Tipo)
             </th>
-            <th style="color:white;">
+            <th>
                 @Html.DisplayNameFor(model => model.Estado)
             </th>
             <th></th>
@@ -27,13 +27,13 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td style="color:white;">
+            <td>
                 @Html.DisplayFor(modelItem => item.Nombre)
             </td>
-            <td style="color:white;">
+            <td>
                 @Html.DisplayFor(modelItem => item.Tipo)
             </td>
-            <td style="color:white;">
+            <td>
                 @Html.DisplayFor(modelItem => item.Estado)
             </td>
             <td>

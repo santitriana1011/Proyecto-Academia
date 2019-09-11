@@ -8,7 +8,7 @@
 <h2 style="color:white; font-size:55px;">Editando una Hoja de Vida</h2>
 
 <hr />
-<div class="row">
+<div class="row" style="margin-left:30%;">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -28,7 +28,7 @@
                 <input asp-for="TiempoExperiencia" class="form-control" />
                 <span asp-validation-for="TiempoExperiencia" class="text-danger"></span>
             </div>
-            <div class="form-group" style="margin-left:34%;">
+            <div class="form-group" style="margin-left:30%;">
                 <input type="submit" value="Guardar" class="btn btn-warning" />
                 <a asp-action="Index" class="btn btn-primary">Atrás</a>
             </div>

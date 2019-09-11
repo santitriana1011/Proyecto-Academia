@@ -4,40 +4,37 @@
     ViewData["Title"] = "Eliminar";
 }
 
-    <h2>Eliminar</h2>
-
-    <h3>¿Está seguro de eliminar este registro?</h3>
 <div>
-    <h4>Novedad Medica</h4>
+
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal" style="margin-left:30%;">
         <dt>
-            @Html.DisplayNameFor(model => model.Estudiante)
+            @Html.DisplayNameFor(model => model.Estudiante) : @Html.DisplayFor(model => model.Estudiante.Nombre)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Estudiante.Nombre)
+            
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Empleado)
+            @Html.DisplayNameFor(model => model.Empleado) : @Html.DisplayFor(model => model.Empleado.Nombre)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Empleado.Nombre)
+            
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.FechaLesion)
+            @Html.DisplayNameFor(model => model.FechaLesion) : @Html.DisplayFor(model => model.FechaLesion)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.FechaLesion)
+            
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Descripcion)
+            @Html.DisplayNameFor(model => model.Descripcion) : @Html.DisplayFor(model => model.Descripcion)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Descripcion)
+           
         </dd>
     </dl>
     
-    <form asp-action="Delete">
+    <form asp-action="Delete" style="margin-left:30%;">
         <input type="hidden" asp-for="NovedadMedicaID" />
         <input type="submit" value="Eliminar" class="btn btn-outline-danger" />
         <a asp-action="Index" class="btn btn-outline-primary">Atrás</a>

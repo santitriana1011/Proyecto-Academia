@@ -321,6 +321,8 @@ namespace myFirstAzureWebApp.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(50);
 
+                    b.Property<string>("PhotoPath");
+
                     b.HasKey("EstudianteID");
 
                     b.HasIndex("AcudienteID");

@@ -17,5 +17,6 @@ namespace myFirstAzureWebApp.Models
         public string Apellido { get; set; }
         public string Documento { get; set; }
         public DateTime FechaNacimiento { get; set; }
+        public string PhotoPath { get; set; }
     }
 }

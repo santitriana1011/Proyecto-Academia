@@ -4,45 +4,45 @@
     ViewData["Title"] = "Detalles";
 }
 
-    <h2>Detalles</h2>
+    <h2 style="color:white;">Detalles</h2>
 
 <div>
-    <h4>Nomina</h4>
+
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal" style="margin-left:30%;"> 
         <dt>
-            @Html.DisplayNameFor(model => model.Empleado)
+            @Html.DisplayNameFor(model => model.Empleado) : @Html.DisplayFor(model => model.Empleado.Nombre)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Empleado.Nombre)
+            
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Item)
+            @Html.DisplayNameFor(model => model.Item) : @Html.DisplayFor(model => model.Item.Nombre)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Item.Nombre)
+            
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.FechaInicio)
+            @Html.DisplayNameFor(model => model.FechaInicio) : @Html.DisplayFor(model => model.FechaInicio)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.FechaInicio)
+            
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.FechaFin)
+            @Html.DisplayNameFor(model => model.FechaFin) : @Html.DisplayFor(model => model.FechaFin)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.FechaFin)
+            
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Valor)
+            @Html.DisplayNameFor(model => model.Valor) : @Html.DisplayFor(model => model.Valor)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Valor)
+            
         </dd>
     </dl>
 </div>
-<div>
+<div style="margin-left:30%;">
     <a asp-action="Edit" asp-route-id="@Model.NominaID" class="btn btn-outline-warning">Editar</a> |
     <a asp-action="Index" class="btn btn-outline-primary">Atrás</a>
 </div>

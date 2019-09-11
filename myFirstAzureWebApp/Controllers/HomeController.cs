@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using myFirstAzureWebApp.Models;
 
@@ -14,6 +17,7 @@ namespace myFirstAzureWebApp.Controllers
         {
             return View();
         }
+        
 
         public IActionResult About()
         {
@@ -33,15 +37,24 @@ namespace myFirstAzureWebApp.Controllers
         {
             return View();
         }
-        public IActionResult Jugadores()
-        {
-            return View();
-        }
+        
         public IActionResult Resultados()
         {
             return View();
         }
         public IActionResult Uniformes()
+        {
+            return View();
+        }
+        public IActionResult Matches()
+        {
+            return View();
+        }
+        public IActionResult News()
+        {
+            return View();
+        }
+        public IActionResult Team()
         {
             return View();
         }
