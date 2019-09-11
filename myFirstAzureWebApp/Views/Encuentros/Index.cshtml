@@ -62,6 +62,29 @@
         </section>*@
     <div class="site-section site-blocks-vs">
         <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <div class="border mb-3 rounded d-block d-lg-flex align-items-center p-3 next-match">
+                        <div class="mr-auto order-md-1 w-60 text-center text-lg-left mb-3 mb-lg-0">
+                            Siguiente Temporada
+                            <div id="date-countdown"></div>
+                        </div>
+                        <div class="ml-auto pr-4 order-md-2">
+                            <div class="h5 text-black text-uppercase text-center text-lg-left">
+                                <div class="d-block d-md-inline-block mb-3 mb-lg-0">
+                                    <img src="~/images/img_1_sq.jpg" alt="Image" class="mr-3 image"><span class="d-block d-md-inline-block ml-0 ml-md-3 ml-lg-0">Bellavista </span>
+                                </div>
+                                <span class="text-muted mx-3 text-normal mb-3 mb-lg-0 d-block d-md-inline ">vs</span>
+                                <div class="d-block d-md-inline-block">
+                                    <img src="~/images/img_3_sq.jpg" alt="Image" class="mr-3 image"><span class="d-block d-md-inline-block ml-0 ml-md-3 ml-lg-0">Patriots</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="row align-items-center mb-1">
                     <div class="col-md-12">
@@ -109,14 +132,14 @@
                     <div style="margin-left:24%;">
                         <p>
                             <em>@Html.DisplayFor(modelItem => item.NombreEvento) , @Html.DisplayFor(modelItem => item.Descripcion)</em> <a asp-action="Edit" asp-route-id="@item.EncuentrosID" class="btn btn-outline-success icon-pencil"></a> |
-                           
+
                             <a asp-action="Delete" asp-route-id="@item.EncuentrosID" class="btn btn-outline-danger icon-delete"></a>
                         </p>
-                        
+
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
         </div>
         
                 }

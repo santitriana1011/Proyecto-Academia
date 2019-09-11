@@ -66,8 +66,8 @@
                                     <a href="#">Mas</a>
                                     <ul class="dropdown">
                                         <li><a asp-controller="Home" asp-action="Uniformes">Uniformes</a></li>
-                                        <li><a href="#">Menu Two</a></li>
-                                        <li><a href="#">Menu Three</a></li>
+                                        <li><a asp-controller="Acudientes" asp-action="Index">Acudientes</a></li>
+                                        <li><a asp-controller="Empleados" asp-action="Index">Empleados</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -76,14 +76,14 @@
                             <a asp-controller="Home" asp-action="News">Actualidad</a>
                             <ul class="dropdown arrow-top">
                                 <li><a asp-controller="Encuentros" asp-action="Matches">Partidos</a></li>
-                                <li><a asp-controller="Estudiantes" asp-action="Index">Jugadores</a></li>
-                                <li><a href="#">Menu Three</a></li>
+                                <li><a asp-controller="Estudiantes" asp-action="Jugadores">Jugadores</a></li>
+                                <li><a asp-controller="Escuelas" asp-action="Index">Escuelas</a></li>
                             </ul>
                         </li>
                         <li><a asp-controller="Encuentros" asp-action="Index">Encuentros</a></li>
-                        <li><a asp-controller="Estudiantes" asp-action="Jugadores">Jugadores</a></li>
-                        <li><a asp-controller="Home" asp-action="About">About</a></li>
-                        <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+                        <li><a asp-controller="Mensualidades" asp-action="Index">Mensualidades</a></li>
+                        <li><a asp-controller="Home" asp-action="About">Nosotros</a></li>
+                       
                     </ul>
                 </div>
             </nav>
@@ -98,119 +98,121 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="mb-5">
-                            <h3 class="footer-heading mb-4">About Sportz</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</p>
+                            <h3 class="footer-heading mb-4">Informacion</h3>
+                            <p>Esta plataforma esta diseñada por estudiantes del Servicio Nacional de Aprendizaje (SENA)
+                            agradecimientos y colaboraciones a los instructores del area de informatica: Lorena Quintero, Nidia Nieto y Manuel Saavedra</p>
                         </div>
-                        <div class="mb-5">
-                            <h3 class="footer-heading mb-4">Recent Blog</h3>
-                            <div class="block-25">
-                                <ul class="list-unstyled">
-                                    <li class="mb-3">
-                                        <a href="#" class="d-flex">
-                                            <figure class="image mr-4">
-                                                <img src="~/images/img1.jpg" alt="" class="img-fluid">
-                                            </figure>
-                                            <div class="text">
-                                                <h3 class="heading font-weight-light">Lorem ipsum dolor sit amet consectetur elit</h3>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="mb-3">
-                                        <a href="#" class="d-flex">
-                                            <figure class="image mr-4">
-                                                <img src="~/images/img1.jpg" alt="" class="img-fluid">
-                                            </figure>
-                                            <div class="text">
-                                                <h3 class="heading font-weight-light">Lorem ipsum dolor sit amet consectetur elit</h3>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="mb-3">
-                                        <a href="#" class="d-flex">
-                                            <figure class="image mr-4">
-                                                <img src="~/images/img1.jpg" alt="" class="img-fluid">
-                                            </figure>
-                                            <div class="text">
-                                                <h3 class="heading font-weight-light">Lorem ipsum dolor sit amet consectetur elit</h3>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        @*<div class="mb-5">
+                    <h3 class="footer-heading mb-4">Recent Blog</h3>
+                    <div class="block-25">
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <a href="#" class="d-flex">
+                                    <figure class="image mr-4">
+                                        <img src="~/images/img1.jpg" alt="" class="img-fluid">
+                                    </figure>
+                                    <div class="text">
+                                        <h3 class="heading font-weight-light">Lorem ipsum dolor sit amet consectetur elit</h3>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="mb-3">
+                                <a href="#" class="d-flex">
+                                    <figure class="image mr-4">
+                                        <img src="~/images/img1.jpg" alt="" class="img-fluid">
+                                    </figure>
+                                    <div class="text">
+                                        <h3 class="heading font-weight-light">Lorem ipsum dolor sit amet consectetur elit</h3>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="mb-3">
+                                <a href="#" class="d-flex">
+                                    <figure class="image mr-4">
+                                        <img src="~/images/img1.jpg" alt="" class="img-fluid">
+                                    </figure>
+                                    <div class="text">
+                                        <h3 class="heading font-weight-light">Lorem ipsum dolor sit amet consectetur elit</h3>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>*@
 
                     </div>
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <div class="row mb-5">
                             <div class="col-md-12">
-                                <h3 class="footer-heading mb-4">Quick Menu</h3>
+                                <h3 class="footer-heading mb-4">Menu Rapido</h3>
                             </div>
-                            <div class="col-md-6 col-lg-6">
+                            <div class="col-md-4 col-lg-4">
                                 <ul class="list-unstyled">
                                     <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                                    <li><a asp-controller="Home" asp-action="Matches">Matches</a></li>
+                                    <li><a asp-controller="Home" asp-action="Matches">Eventos</a></li>
                                     <li><a asp-controller="Home" asp-action="News">Actualidad</a></li>
-                                    <li><a asp-controller="Home" asp-action="Team">Team</a></li>
+                                    <li><a asp-controller="Home" asp-action="Team">Jugadores</a></li>
                                 </ul>
                             </div>
-                            <div class="col-md-6 col-lg-6">
+                            <div class="col-md-4 col-lg-4">
                                 <ul class="list-unstyled">
-                                    <li><a asp-controller="Home" asp-action="About">About Us</a></li>
-                                    <li><a asp-controller="" asp-action="">Privacy Policy</a></li>
-                                    <li><a asp-controller="Home" asp-action="Contact">Contact Us</a></li>
-                                    <li><a asp-controller="" asp-action="">Membership</a></li>
+                                    <li><a asp-controller="Home" asp-action="About">Sobre Nosotros</a></li>
+                                    <li><a asp-controller="" asp-action="">Politicas de Privacidad</a></li>   
+                                    
                                 </ul>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h3 class="footer-heading mb-4">Follow Us</h3>
-                                <div>
-                                    <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-                                    <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-                                    <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-                                    <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <div class="mb-5">
-                            <h3 class="footer-heading mb-4">Watch Video</h3>
-                            <div class="block-16">
-                                <figure>
-                                    <img src="~/images/img1.jpg" alt="Image placeholder" class="img-fluid rounded">
-                                    <a href="https://vimeo.com/channels/staffpicks/93951774" class="play-button popup-vimeo"><span class="icon-play"></span></a>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="mb-5">
-                            <h3 class="footer-heading mb-2">Subscribe Newsletter</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit minima minus odio.</p>
-                            <form action="#" method="post">
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary" type="button" id="button-addon2">Send</button>
-                                    </div>
-                                </div>
-                            </form>
                         </div>
                     </div>
 
+                    <div class="col-md-4">
+                        <h3 class="footer-heading mb-4">Siguenos en nuestras redes sociales</h3>
+                        <div>
+                            <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                            <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                            <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                            <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+                        </div>
+                    </div>
+
+
+                    @*<div class="col-lg-4 mb-5 mb-lg-0">
+            <div class="mb-5">
+                <h3 class="footer-heading mb-4">Watch Video</h3>
+                <div class="block-16">
+                    <figure>
+                        <img src="~/images/img1.jpg" alt="Image placeholder" class="img-fluid rounded">
+                        <a href="https://vimeo.com/channels/staffpicks/93951774" class="play-button popup-vimeo"><span class="icon-play"></span></a>
+                    </figure>
                 </div>
-                <div class="row pt-5 mt-5 text-center">
+            </div>*@
+                    @*<div class="mb-5">
+                <h3 class="footer-heading mb-2">Subscribe Newsletter</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit minima minus odio.</p>
+                <form action="#" method="post">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button" id="button-addon2">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>*@
+                    @*</div>*@
+
+                </div>
+                <div class="row pt-5 text-center">
                     <div class="col-md-12">
                         <p>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;
-                            <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy; 2019 Todos los derechos reservados a la Academia de Futbol Bellavista <br />
+                            Agradecimientos:
                         </p>
+                        <img height="40px" width="80px" src="~/images/ViveLab Boyacá logo oficial.png" />
+
+                        <img height="40px" width="80px" src="~/images/LogoGobernacion.png" />
                     </div>
 
                 </div>
+                
             </div>
         </footer>
     </div>
