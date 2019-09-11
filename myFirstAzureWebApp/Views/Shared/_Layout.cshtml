@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>@ViewData["Title"] - Sportz &mdash; Colorlib Sports Team Template</title>
+    <title>@ViewData["Title"] - Academia Bellavista &mdash;</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <environment include="Development">
@@ -60,7 +60,7 @@
                             <a asp-controller="Home" asp-action="Index">Home</a>
                             <ul class="dropdown arrow-top">
                                 <li><a asp-controller="Traspasos" asp-action="Index">Traspasos</a></li>
-                                <li><a asp-controller="Encuentros" asp-action="Index">Encuentros</a></li>
+                                
                                 <li><a asp-controller="Horarios" asp-action="Index">Horarios</a></li>
                                 <li class="has-children">
                                     <a href="#">Mas</a>
@@ -75,8 +75,8 @@
                         <li class="has-children">
                             <a asp-controller="Home" asp-action="News">Actualidad</a>
                             <ul class="dropdown arrow-top">
-                                <li><a href="#">Menu One</a></li>
-                                <li><a href="#">Menu Two</a></li>
+                                <li><a asp-controller="Encuentros" asp-action="Matches">Partidos</a></li>
+                                <li><a asp-controller="Estudiantes" asp-action="Index">Jugadores</a></li>
                                 <li><a href="#">Menu Three</a></li>
                             </ul>
                         </li>

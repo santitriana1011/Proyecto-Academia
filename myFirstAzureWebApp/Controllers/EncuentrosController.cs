@@ -12,12 +12,19 @@ namespace myFirstAzureWebApp.Controllers
 {
     public class EncuentrosController : Controller
     {
+        public IActionResult Matches()
+        {
+            return View();
+        }
+
         private readonly ApplicationDbContext _context;
 
         public EncuentrosController(ApplicationDbContext context)
         {
             _context = context;
         }
+
+        
 
         // GET: Encuentros
         public async Task<IActionResult> Index()
@@ -26,6 +33,7 @@ namespace myFirstAzureWebApp.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
+        
         // GET: Encuentros/Details/5
         public async Task<IActionResult> Details(int? id)
         {

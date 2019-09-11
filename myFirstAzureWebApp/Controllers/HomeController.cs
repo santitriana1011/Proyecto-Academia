@@ -46,10 +46,7 @@ namespace myFirstAzureWebApp.Controllers
         {
             return View();
         }
-        public IActionResult Matches()
-        {
-            return View();
-        }
+        
         public IActionResult News()
         {
             return View();
