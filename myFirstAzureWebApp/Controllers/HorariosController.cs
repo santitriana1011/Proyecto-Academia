@@ -22,19 +22,7 @@ namespace myFirstAzureWebApp.Controllers
         // GET: Horarios
         public async Task<IActionResult> Index()
         {
-            //var applicationDbContext = _context.Empleado.Where(e=>e.Cargo.Nombre == "Instructor");
-            var applicationDbContext = _context.Horario.Where(h => h.Empleado.Nombre == "Instructor");
-            //var applicationDbContextInstructores = applicationDbContext.GroupBy(n => n.Nombre);
-            var applicationDbContextHorarios = applicationDbContext.GroupBy(e => e.Empleado.Nombre);
-            var resultado = applicationDbContextHorarios.ToList();
-            foreach (var nombre in resultado)
-            {
-                var n = nombre.Key;
-                foreach (var inst in nombre)
-                {
-
-                }
-            }
+            var applicationDbContext = _context.Horario.Include(m => m.Empleado);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -60,6 +48,16 @@ namespace myFirstAzureWebApp.Controllers
         // GET: Horarios/Create
         public IActionResult Create()
         {
+            
+                List<String> lsHora = new List<string>();
+                lsHora.Add("8:00 - 9:00");
+                lsHora.Add("9:00 - 10:00");
+                lsHora.Add("10:00 - 11:00");
+                lsHora.Add("11:00 - 12:00");
+
+           
+                ViewBag.Hora = new SelectList(lsHora);
+            
             ViewData["EmpleadoID"] = new SelectList(_context.Empleado, "EmpleadoID", "Nombre");
             return View();
         }
@@ -69,7 +67,7 @@ namespace myFirstAzureWebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("HorarioID,FechaHora,EmpleadoID")] Horario horario)
+        public async Task<IActionResult> Create([Bind("HorarioID,Hora,EmpleadoID")] Horario horario)
         {
             if (ModelState.IsValid)
             {

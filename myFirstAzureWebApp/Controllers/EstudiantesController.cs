@@ -10,18 +10,19 @@ using myFirstAzureWebApp.Models;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using myFirstAzureWebApp.ViewModels;
 
 namespace myFirstAzureWebApp.Controllers
 {
     public class EstudiantesController : Controller
     {
         private readonly ApplicationDbContext _context;
-        private readonly IHostingEnvironment he;
+        private readonly IHostingEnvironment hostingEnvironment;
 
-        public EstudiantesController(ApplicationDbContext context, IHostingEnvironment e)
+        public EstudiantesController(ApplicationDbContext context, IHostingEnvironment hostingEnvironment)
         {
             _context = context;
-            he = e;
+            this.hostingEnvironment = hostingEnvironment;
         }
 
         // GET: Estudiantes
@@ -56,9 +57,31 @@ namespace myFirstAzureWebApp.Controllers
         }
 
         // GET: Estudiantes/Create
-        public IActionResult Create()
+        public IActionResult Create(EmployeeCreateViewModel model)
         {
-            ViewData["AcudienteID"] = new SelectList(_context.Acudiente, "AcudienteID", "Nombre");
+            if (ModelState.IsValid)
+            {
+                string uniqueFileName = null;
+                if (model.Photo != null)
+                {
+                    string uploadsFolder = Path.Combine(hostingEnvironment.WebRootPath, "images");
+                    uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Photo.FileName;
+                    string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                    model.Photo.CopyTo(new FileStream(filePath, FileMode.Create));
+                }
+                Estudiante newEstudiante = new Estudiante
+                {
+                    //AcudienteID = new SelectList(model.Acudiente, "AcudienteID", "Nombre"),
+                    Nombre = model.Nombre,
+                    Apellido = model.Apellido,
+                    Documento = model.Documento,
+                    FechaNacimiento = model.FechaNacimiento,
+                    PhotoPath = uniqueFileName
+                };
+                _context.Add(newEstudiante);
+                return RedirectToAction("Leones", new { id = newEstudiante.EstudianteID });
+            }
+            //ViewData["AcudienteID"] = new SelectList(_context.Acudiente, "AcudienteID", "Nombre");
             
             return View();
         }
@@ -68,7 +91,7 @@ namespace myFirstAzureWebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EstudianteID,AcudienteID,Nombre,Apellido,Documento,FechaNacimiento")] Estudiante estudiante)
+        public async Task<IActionResult> Create([Bind("EstudianteID,Nombre,Apellido,Documento,FechaNacimiento,PhotoPath")] Estudiante estudiante)
         {
             if (ModelState.IsValid)
             {
@@ -76,7 +99,7 @@ namespace myFirstAzureWebApp.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Contact", "Home");
             }
-            ViewData["AcudienteID"] = new SelectList(_context.Acudiente, "AcudienteID", "Nombre", estudiante.AcudienteID);
+            //ViewData["AcudienteID"] = new SelectList(_context.Acudiente, "AcudienteID", "Nombre", estudiante.AcudienteID);
             return View(estudiante);
         }
 
@@ -167,15 +190,8 @@ namespace myFirstAzureWebApp.Controllers
         {
             return _context.Estudiante.Any(e => e.EstudianteID == id);
         }
-        public async Task<IActionResult> Leones(string fullName, IFormFile PhotoPath)
+        public async Task<IActionResult> Leones()
         {
-            ViewData["fname"] = fullName;
-            if (PhotoPath != null)
-            {
-                var fileName = Path.Combine(he.WebRootPath, Path.GetFileName(PhotoPath.FileName));
-                PhotoPath.CopyTo(new FileStream(fileName, FileMode.Create));
-                ViewData["fileLocation"] = "/" + Path.GetFileName(PhotoPath.FileName);
-            }
             var applicationDbContext = _context.Estudiante.Include(e => e.Acudiente);
             return View(await applicationDbContext.ToListAsync());
         }

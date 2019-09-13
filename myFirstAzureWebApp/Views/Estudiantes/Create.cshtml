@@ -1,4 +1,4 @@
-﻿@model myFirstAzureWebApp.Models.Estudiante
+﻿@model myFirstAzureWebApp.ViewModels.EmployeeCreateViewModel
 
 @{
     ViewData["Title"] = "Crear";
@@ -12,10 +12,10 @@
     <div class="col-md-4">
         <form asp-action="Create" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="AcudienteID" class="control-label letra">Acudiente</label>
                 <select asp-for="AcudienteID" class="form-control" asp-items="ViewBag.AcudienteID"></select>
-            </div>
+            </div>*@
             <div class="form-group">
                 <label asp-for="Nombre" class="control-label letra"></label>
                 <input asp-for="Nombre" class="form-control" />
@@ -37,22 +37,17 @@
                 <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PhotoPath" class="control-label letra"></label>
-           
-                <input asp-for="PhotoPath" type="file" name="PhotoPath" class="form-control" />
-                <span asp-validation-for="PhotoPath" class="text-danger"></span>
+                <label asp-for="Photo"></label>
+                <div class="custom-file">
+                    <input asp-for="Photo" class="form-control custom-file-input" />
+                    <label class="custom-file-label">Elegir archivo...</label>
+                </div>
             </div>
             <div class="form-group" style="margin-left:34%;">
                 <input type="submit" value="Crear" class="btn btn-primary" asp-action="Leones" />
                 <a asp-action="Leones" class="btn btn-danger">Atrás</a>
             </div>
         </form>
-
-        @*<form method="post" action="/Estudiantes/Leones" >
-            <input type="file" name="pic" /><br />
-            <input type="text" name="fullName" /><br />
-            <input type="submit" value="Go" />
-        </form>*@
     </div>
 </div>
 
@@ -62,4 +57,14 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        $(document).ready(function () {
+            $('.custom-file-input').on("change", function () {
+                var fileName = $(this).val().split("\\").pop();
+                $(this).next('.custom-file-label').html(fileName);
+            });
+        }
+        )
+    </script>
 }

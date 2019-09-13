@@ -9,7 +9,8 @@ namespace myFirstAzureWebApp.Models
     public class Horario
     {
         public int HorarioID { get; set; }
-        public DateTime FechaHora { get; set; }
+        
+        public string Hora { get; set; }
         public int EmpleadoID { get; set; }
         public Empleado Empleado { get; set; }
        

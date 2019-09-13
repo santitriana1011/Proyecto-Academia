@@ -9,18 +9,23 @@
 
 <h4 style="color:white;">Horario</h4>
 <hr />
+
+
+
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="HorarioID" class="control-label letra">Seleccione el Horario:</label>
-                <select asp-for="HorarioID" class="form-control" asp-items="ViewBag.HorarioID"></select>
+                <label asp-for="EmpleadoID" class="control-label letra">Empleado</label>
+                <select asp-for="EmpleadoID" class="form-control" asp-items="ViewBag.EmpleadoID"></select>
             </div>
             <div class="form-group">
-                <label asp-for="FechaHora" class="control-label letra"></label>
-                <input asp-for="FechaHora" class="form-control" />
-                <span asp-validation-for="FechaHora" class="text-danger"></span>
+                <label asp-for="Hora" class="control-label letra"></label>
+                <select asp-for="Hora" class="form-control" asp-items="ViewBag.Hora"/>
+                <select>@Html.DropDownList("Hora", null, htmlAttributes: new { @class = "form-control" })</select>
+                
+                <span asp-validation-for="Hora" class="text-danger"></span>
             </div>
             <div class="form-group" style="margin-left:34%;">
                 <input type="submit" value="Crear" class="btn btn-outline-primary" />

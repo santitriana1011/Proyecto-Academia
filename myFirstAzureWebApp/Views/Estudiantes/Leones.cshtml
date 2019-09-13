@@ -21,10 +21,11 @@
 
             @foreach (var item in Model)
             {
+                var photoPath = "~/images/" + (item.PhotoPath ?? "");
                 <div class="col-md-4 col-sm-6">
                     <div class="card text-center" style="max-width: 440px; display:inline-block; margin-right:12px; margin-left:24px; margin-top:9px;">
                         <div class="card-block">
-                            <img src="@ViewData["FileLocation"]"  class="players img-fluid " />
+                            <img src="@photoPath" asp-append-version="true"  class="players img-fluid " />
                             <div class="card-title">
                                 <h4>@Html.DisplayFor(modelItem => item.Nombre)</h4>
                                 @Html.DisplayFor(modelItem => item.Apellido)
@@ -49,7 +50,7 @@
 
 </section>
 
-<label>@ViewData["fname"]</label><br />
+@*<label>@ViewData["fname"]</label><br />*@
 
 
 
