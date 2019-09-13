@@ -1,0 +1,32 @@
+﻿@model myFirstAzureWebApp.Models.Actualidad
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<h3>¿Esta seguro de Eliminar este Evento?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal" style="margin-left:30%;">
+        <dd>
+            @Html.DisplayNameFor(model => model.Nombre) : @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        
+        <dd>
+            @Html.DisplayNameFor(model => model.Fecha) : @Html.DisplayFor(model => model.Fecha)
+        </dd>
+        
+        <dd>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete" style="margin-left:30%;">
+        <input type="hidden" asp-for="ActualidadID" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-primary">Atras</a>
+    </form>
+</div>
