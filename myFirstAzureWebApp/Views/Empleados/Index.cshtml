@@ -27,16 +27,69 @@
                         <p class="card-text"><small class="text-muted">@Html.DisplayNameFor(model => model.Documento) :  @Html.DisplayFor(modelItem => item.Documento)</small></p>
                         <p class="card-text"><small class="text-muted">@Html.DisplayNameFor(model => model.Telefono) : @Html.DisplayFor(modelItem => item.Telefono)</small></p>
                         <p class="card-text"><small class="text-muted">@Html.DisplayNameFor(model => model.Direccion) :  @Html.DisplayFor(modelItem => item.Direccion)</small></p>
-                        
+
                         <p class="card-text"><small class="text-muted">@Html.DisplayNameFor(model => model.Estado) :  @Html.DisplayFor(modelItem => item.Estado)</small></p>
                     </div>
                 </div>
                 <div style="margin-left:45%;">
                     <a asp-action="Edit" asp-route-id="@item.EmpleadoID" class="btn btn-outline-success icon-pencil"></a> ||
-                    
+
                     <a asp-action="Delete" asp-route-id="@item.EmpleadoID" class="btn btn-outline-danger icon-delete"></a>
                 </div>
             </div>
         </div>
     }
+
+
+
+    <div class="card mb-5" style="max-width: 480px; display:inline-block; margin-right:12px; margin-left:24px; margin-top:9px;">
+        <div class="row no-gutters row-lg-6">
+            <div class="col-md-4">
+                <img src="~/images/person_3.jpg" class="card-img" alt="...">
+            </div>
+            <div class="col-md-8 col-lg-6">
+                <div class="card-body">
+                    <h5 class="card-title">Cesar Castro</h5>
+                    <p class="card-text">Instructor </p>
+                    <p class="card-text"><small class="text-muted">79895288</small></p>
+                    <p class="card-text"><small class="text-muted">1 3218189977</small></p>
+                    <p class="card-text"><small class="text-muted">Calle 68 n82-33</small></p>
+
+                    <p class="card-text"><small class="text-muted">Estado:</small></p>
+                </div>
+            </div>
+            <div style="margin-left:45%;">
+                <a asp-action="Edit" asp-route-id="#" class="btn btn-outline-success icon-pencil"></a> ||
+
+                <a asp-action="Delete" asp-route-id="#" class="btn btn-outline-danger icon-delete"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-5" style="max-width: 480px; display:inline-block; margin-right:12px; margin-left:24px; margin-top:9px;">
+        <div class="row no-gutters row-lg-6">
+            <div class="col-md-4">
+                <img src="~/images/person_2.jpg" class="card-img" alt="...">
+            </div>
+            <div class="col-md-8 col-lg-6">
+                <div class="card-body">
+                    <h5 class="card-title">Juliana Castro</h5>
+                    <p class="card-text">Secretaria </p>
+                    <p class="card-text"><small class="text-muted">7323238</small></p>
+                    <p class="card-text"><small class="text-muted">31444557</small></p>
+                    <p class="card-text"><small class="text-muted">Calle 102 n88-33</small></p>
+
+                    <p class="card-text"><small class="text-muted">Estado:</small></p>
+                </div>
+            </div>
+            <div style="margin-left:45%;">
+                <a asp-action="Edit" asp-route-id="#" class="btn btn-outline-success icon-pencil"></a> ||
+
+                <a asp-action="Delete" asp-route-id="#" class="btn btn-outline-danger icon-delete"></a>
+            </div>
+        </div>
+    </div>
+
+    
+
 </section>

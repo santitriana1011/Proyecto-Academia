@@ -76,9 +76,9 @@
                     <div class="card-body">
                         <h5 class="card-title"> @Html.DisplayFor(modelItem => item.Estudiante.Nombre)</h5>
                         <p class="card-text"> @Html.DisplayFor(modelItem => item.Escuela.Nombre)</p>
-                        <p class="card-text"><small>@Html.DisplayFor(modelItem => item.FechaInicio)</small></p>
-                        <p class="card-text"><small>@Html.DisplayFor(modelItem => item.FechaFin)</small></p>
-                        <p class="card-text"><small>@Html.DisplayFor(modelItem => item.Novedades)</small></p>
+                        <p class="card-text">@Html.DisplayFor(modelItem => item.FechaInicio)</p>
+                        <p class="card-text">@Html.DisplayFor(modelItem => item.FechaFin)</p>
+                        <p class="card-text">@Html.DisplayFor(modelItem => item.Novedades)</p>
                     </div>
                     <div>
                         <a asp-action="Edit" asp-route-id="@item.TraspasoID" class="btn btn-outline-success">Editar</a>
