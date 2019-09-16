@@ -57,7 +57,21 @@ namespace myFirstAzureWebApp.Controllers
         }
 
         // GET: Estudiantes/Create
-        public IActionResult Create(EmployeeCreateViewModel model)
+        public IActionResult Create()
+        {
+            
+            
+            ViewData["AcudienteID"] = new SelectList(_context.Acudiente, "AcudienteID", "Nombre");
+            
+            return View();
+        }
+
+        // POST: Estudiantes/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(EmployeeCreateViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -71,7 +85,7 @@ namespace myFirstAzureWebApp.Controllers
                 }
                 Estudiante newEstudiante = new Estudiante
                 {
-                    //AcudienteID = new SelectList(model.Acudiente, "AcudienteID", "Nombre"),
+                    AcudienteID = model.AcudienteID,
                     Nombre = model.Nombre,
                     Apellido = model.Apellido,
                     Documento = model.Documento,
@@ -79,28 +93,10 @@ namespace myFirstAzureWebApp.Controllers
                     PhotoPath = uniqueFileName
                 };
                 _context.Add(newEstudiante);
-                return RedirectToAction("Leones", new { id = newEstudiante.EstudianteID });
-            }
-            //ViewData["AcudienteID"] = new SelectList(_context.Acudiente, "AcudienteID", "Nombre");
-            
-            return View();
-        }
-
-        // POST: Estudiantes/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EstudianteID,Nombre,Apellido,Documento,FechaNacimiento,PhotoPath")] Estudiante estudiante)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(estudiante);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Contact", "Home");
+                return RedirectToAction("Leones");
             }
-            //ViewData["AcudienteID"] = new SelectList(_context.Acudiente, "AcudienteID", "Nombre", estudiante.AcudienteID);
-            return View(estudiante);
+            return View();
         }
 
         // GET: Estudiantes/Edit/5

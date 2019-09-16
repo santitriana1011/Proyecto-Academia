@@ -64,7 +64,7 @@ namespace myFirstAzureWebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EncuentrosID,EscuelaID,Categoria,NombreEvento,Descripcion")] Encuentros encuentros)
+        public async Task<IActionResult> Create([Bind("EncuentrosID,EscuelaID,Categoria,NombreEvento,MarcadorLocal,MarcadorVisitante,Descripcion")] Encuentros encuentros)
         {
             if (ModelState.IsValid)
             {
@@ -100,7 +100,7 @@ namespace myFirstAzureWebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("EncuentrosID,EscuelaID,Categoria,NombreEvento,Descripcion")] Encuentros encuentros)
+        public async Task<IActionResult> Edit(int id, [Bind("EncuentrosID,EscuelaID,Categoria,NombreEvento,MarcadorLocal,MarcadorVisitante,Descripcion")] Encuentros encuentros)
         {
             if (id != encuentros.EncuentrosID)
             {

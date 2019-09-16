@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>@ViewData["Title"] - Academia Bellavista &mdash;</title>
@@ -43,7 +48,7 @@
                             <a href="#" class="text-secondary px-2"><span class="icon-linkedin"></span></a>
                         </div>
                         <div class="col-6 col-md-9 text-right">
-                            <div class="d-inline-block"><a href="#" class="text-secondary p-2 d-flex align-items-center"><span class="icon-envelope mr-3"></span> <span class="d-none d-md-block">AcademiaBellavista@gmail.com</span></a></div>
+                            <div class="d-inline-block"><a href="#" class="text-secondary p-2 d-flex align-items-center"><span class="icon-envelope mr-3"></span> <span class="d-none d-md-block">@*Hello @UserManager.GetUserName(User)!*@ AcademiaBellavista@gmail.com</span></a></div>
                             <div class="d-inline-block"><a href="#" class="text-secondary p-2 d-flex align-items-center"><span class="icon-phone mr-0 mr-md-3"></span> <span class="d-none d-md-block">+57 314 2705 678</span></a></div>
                         </div>
                     </div>
@@ -52,7 +57,7 @@
             <nav class="site-navigation position-relative text-right bg-black text-md-right" role="navigation">
                 <div class="container position-relative">
                     <div class="site-logo">
-                        <a asp-controller="Home" asp-action="Index">@*<img src="~/images/logo1.png" alt="">*@</a>
+                        <a asp-controller="Home" asp-action="Index"><img src="~/images/Loguito.png" alt="" width="90" height="60" style="margin-top:20px;"></a>
                     </div>
                     <div class="d-inline-block d-md-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
                     <ul class="site-menu js-clone-nav d-none d-md-block">
@@ -60,7 +65,7 @@
                             <a asp-controller="Home" asp-action="Index">Home</a>
                             <ul class="dropdown arrow-top">
                                 <li><a asp-controller="Traspasos" asp-action="Index">Traspasos</a></li>
-                                
+
                                 <li><a asp-controller="Horarios" asp-action="Index">Horarios</a></li>
                                 <li class="has-children">
                                     <a href="#">Mas</a>
@@ -81,15 +86,20 @@
                             </ul>
                         </li>
                         <li><a asp-controller="Estudiantes" asp-action="Jugadores">Jugadores</a></li>
-                        
+
                         <li><a asp-controller="Home" asp-action="About">Nosotros</a></li>
-                       
+                        <li><a asp-area="Identity" asp-page="/Account/Register">Registro</a></li>
+                        <li><a asp-area="Identity" asp-page="/Account/Login">Login</a></li>
                     </ul>
+
+
+
+
                 </div>
             </nav>
         </header>
 
-        <partial name="_CookieConsentPartial" />
+
 
         @RenderBody()
 
@@ -99,46 +109,48 @@
                     <div class="col-lg-4">
                         <div class="mb-5">
                             <h3 class="footer-heading mb-4">Informacion</h3>
-                            <p>Esta plataforma esta diseñada por estudiantes del Servicio Nacional de Aprendizaje (SENA)
-                            agradecimientos y colaboraciones a los instructores del area de informatica: Lorena Quintero, Nidia Nieto y Manuel Saavedra</p>
+                            <p>
+                                Esta plataforma esta diseñada por estudiantes del Servicio Nacional de Aprendizaje (SENA)
+                                agradecimientos y colaboraciones a los instructores del area de informatica: Lorena Quintero, Nidia Nieto y Manuel Saavedra
+                            </p>
                         </div>
                         @*<div class="mb-5">
-                    <h3 class="footer-heading mb-4">Recent Blog</h3>
-                    <div class="block-25">
-                        <ul class="list-unstyled">
-                            <li class="mb-3">
-                                <a href="#" class="d-flex">
-                                    <figure class="image mr-4">
-                                        <img src="~/images/img1.jpg" alt="" class="img-fluid">
-                                    </figure>
-                                    <div class="text">
-                                        <h3 class="heading font-weight-light">Lorem ipsum dolor sit amet consectetur elit</h3>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="mb-3">
-                                <a href="#" class="d-flex">
-                                    <figure class="image mr-4">
-                                        <img src="~/images/img1.jpg" alt="" class="img-fluid">
-                                    </figure>
-                                    <div class="text">
-                                        <h3 class="heading font-weight-light">Lorem ipsum dolor sit amet consectetur elit</h3>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="mb-3">
-                                <a href="#" class="d-flex">
-                                    <figure class="image mr-4">
-                                        <img src="~/images/img1.jpg" alt="" class="img-fluid">
-                                    </figure>
-                                    <div class="text">
-                                        <h3 class="heading font-weight-light">Lorem ipsum dolor sit amet consectetur elit</h3>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>*@
+                                <h3 class="footer-heading mb-4">Recent Blog</h3>
+                                <div class="block-25">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-3">
+                                            <a href="#" class="d-flex">
+                                                <figure class="image mr-4">
+                                                    <img src="~/images/img1.jpg" alt="" class="img-fluid">
+                                                </figure>
+                                                <div class="text">
+                                                    <h3 class="heading font-weight-light">Lorem ipsum dolor sit amet consectetur elit</h3>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="mb-3">
+                                            <a href="#" class="d-flex">
+                                                <figure class="image mr-4">
+                                                    <img src="~/images/img1.jpg" alt="" class="img-fluid">
+                                                </figure>
+                                                <div class="text">
+                                                    <h3 class="heading font-weight-light">Lorem ipsum dolor sit amet consectetur elit</h3>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="mb-3">
+                                            <a href="#" class="d-flex">
+                                                <figure class="image mr-4">
+                                                    <img src="~/images/img1.jpg" alt="" class="img-fluid">
+                                                </figure>
+                                                <div class="text">
+                                                    <h3 class="heading font-weight-light">Lorem ipsum dolor sit amet consectetur elit</h3>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>*@
 
                     </div>
                     <div class="col-lg-4 mb-5 mb-lg-0">
@@ -157,8 +169,8 @@
                             <div class="col-md-4 col-lg-4">
                                 <ul class="list-unstyled">
                                     <li><a asp-controller="Home" asp-action="About">Sobre Nosotros</a></li>
-                                    <li><a asp-controller="" asp-action="">Politicas de Privacidad</a></li>   
-                                    
+                                    <li><a asp-controller="" asp-action="">Politicas de Privacidad</a></li>
+
                                 </ul>
                             </div>
                         </div>
@@ -176,27 +188,27 @@
 
 
                     @*<div class="col-lg-4 mb-5 mb-lg-0">
-            <div class="mb-5">
-                <h3 class="footer-heading mb-4">Watch Video</h3>
-                <div class="block-16">
-                    <figure>
-                        <img src="~/images/img1.jpg" alt="Image placeholder" class="img-fluid rounded">
-                        <a href="https://vimeo.com/channels/staffpicks/93951774" class="play-button popup-vimeo"><span class="icon-play"></span></a>
-                    </figure>
-                </div>
-            </div>*@
+                        <div class="mb-5">
+                            <h3 class="footer-heading mb-4">Watch Video</h3>
+                            <div class="block-16">
+                                <figure>
+                                    <img src="~/images/img1.jpg" alt="Image placeholder" class="img-fluid rounded">
+                                    <a href="https://vimeo.com/channels/staffpicks/93951774" class="play-button popup-vimeo"><span class="icon-play"></span></a>
+                                </figure>
+                            </div>
+                        </div>*@
                     @*<div class="mb-5">
-                <h3 class="footer-heading mb-2">Subscribe Newsletter</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit minima minus odio.</p>
-                <form action="#" method="post">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="button" id="button-addon2">Send</button>
-                        </div>
-                    </div>
-                </form>
-            </div>*@
+                            <h3 class="footer-heading mb-2">Subscribe Newsletter</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit minima minus odio.</p>
+                            <form action="#" method="post">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button" id="button-addon2">Send</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>*@
                     @*</div>*@
 
                 </div>
@@ -212,7 +224,7 @@
                     </div>
 
                 </div>
-                
+
             </div>
         </footer>
     </div>

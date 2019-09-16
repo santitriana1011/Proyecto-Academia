@@ -13,5 +13,7 @@ namespace myFirstAzureWebApp.Models
         public string Categoria { get; set; }
         public string NombreEvento { get; set; }
         public string Descripcion { get; set; }
+        public int MarcadorLocal { get; set; }
+        public int MarcadorVisitante { get; set; }
     }
 }

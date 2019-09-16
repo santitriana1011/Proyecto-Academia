@@ -10,8 +10,8 @@ namespace myFirstAzureWebApp.ViewModels
 {
     public class EmployeeCreateViewModel
     {
-        //public int AcudienteID { get; set; }
-        //public Acudiente Acudiente { get; set; }
+        public int AcudienteID { get; set; }
+        public Acudiente Acudiente { get; set; }
         [Required]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "El nombre debe tener de 3 a 50 caracteres")]
         public string Nombre { get; set; }
